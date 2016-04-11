@@ -1,0 +1,17 @@
+//Media Queries
+$mobile: "(min-width: 320px) and (max-width:767px)";
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+
+//Global Fonts
+$alice-stack: 'Alice', serif;
+$raleway-stack: 'Raleway', sans-serif;
+
+body{
+    background: black;
+    h3{
+        color: white;
+        text-align: center;
+        font-family: $raleway-stack;
+    }
+}
