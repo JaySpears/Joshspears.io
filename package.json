@@ -16,5 +16,8 @@
     "grunt-contrib-watch": "~0.6.1",
     "shipit-cli": "^1.4.1",
     "shipit-deploy": "^2.1.3"
+  },
+  "dependencies": {
+    "jquery": "^2.2.3"
   }
 }
