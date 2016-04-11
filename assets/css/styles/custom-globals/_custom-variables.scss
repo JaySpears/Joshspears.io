@@ -1,0 +1,67 @@
+// -----------------------------------------------------------------
+// Custom Variables
+//
+// Custom variables for use in this project only.
+// 
+//
+// FYI: 
+// These are imported at the bottom of the bootstrap/_variables.scss 
+// file so that these styles override Bootstrap.
+// -----------------------------------------------------------------
+
+
+
+//== Breakpoints
+//
+//## Points at which layout changes, responding to different devices.
+
+// Small screen / tablet
+$screen-sm-min:              768px !default;
+
+// Medium screen / desktop
+$screen-md-min:              992px !default;
+
+// Large screen / wide desktop
+$screen-lg-min:              1200px !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+
+//== Colors
+//
+//## Custom colors, specific to this project.
+
+$blue:					#84A9C0;					
+$green:					#3FDD4D;
+$black:					#333333;
+$gray:					#4D5061; 
+$white:					#ffffff;
+
+
+
+//== Links
+//
+//## Textual link variables
+$link-color:			$white;
+
+
+
+//== Buttons
+//
+//## Button Variables
+$button-border-color:	$white;
+$button-bg-color:		transparent;
+$button-font:			'futura-pt';
+$button-type-color:		$white;
+$button-hover-type:		$green;
+
+
+//== Typography
+//
+//## Typography Variables
+$heading-font:			'futura-pt';
+$body-font:				'ff-tisa-web-pro'

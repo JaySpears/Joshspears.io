@@ -1,0 +1,35 @@
+
+.about-block{
+	height: 100%;
+
+	.tools-i-use{
+		text-align: center;
+		.tool-logos{
+			padding-top: 50px;
+			@media(min-width: $screen-sm-min){
+				margin: 0 auto;
+				width: 60%;
+			}
+			.tool-logos__logo{
+				margin-bottom: 25px;
+				position: relative;
+				@media(min-width: $screen-sm-min){
+					margin-bottom: 50px;
+				}
+				img{
+					height: 50px;
+					transition: all .33s ease-in-out;
+
+					@media(min-width: $screen-sm-min){
+						height: 75px;
+					}
+					&:hover{
+						transform: scale(1.25);
+						transition: all .33s ease-in-out;
+					}
+
+				}
+			}
+		}
+	}
+}

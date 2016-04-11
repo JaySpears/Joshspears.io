@@ -1,0 +1,88 @@
+// -----------------------------------------------------------------
+// Custom Typography
+//
+// Custom typography for use in this project only.
+// 
+// -----------------------------------------------------------------
+
+//== Headings and Body Copy
+//
+//## Styling for headings and body copy
+
+//Base Font Size
+body{
+	font-size: 14px;
+	transition: all .33s ease-in-out;
+	@media(min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+		font-size: 16px;
+	}
+	@media(min-width: $screen-md-min) and (max-width: $screen-md-max){
+		font-size: 18px;
+	}
+	@media(min-width: $screen-lg-min){
+		font-size: 20px;
+	}
+}
+
+
+p{
+	font-family: $body-font;
+	font-size: 1em;
+}
+
+h1{
+	font-family: $heading-font;
+	font-size: 3em;
+	@media(min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+		font-size: 3.25em;
+	}
+	@media(min-width: $screen-md-min) and (max-width: $screen-md-max){
+		font-size: 3.50em;
+	}
+	@media(min-width: $screen-lg-min){
+		font-size: 3.75em;
+	}
+}
+h2{
+	font-family: $heading-font;
+	font-size: 2.25em;
+	@media(min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+		font-size: 2.50em;
+	}
+	@media(min-width: $screen-md-min) and (max-width: $screen-md-max){
+		font-size: 2.75em;
+	}
+	@media(min-width: $screen-lg-min){
+		font-size: 2.80em;
+	}
+}
+h3{
+	font-family: $heading-font;
+	font-size: 2em;
+}
+h4{
+	font-family: $heading-font;
+	font-size: 1.75em;
+}
+h5{
+	font-family: $heading-font;
+	font-size: 1.50em;
+	margin: 30px auto;
+	text-transform: uppercase;
+}
+h6{
+	font-family: $heading-font;
+	font-size: 1.25em;
+}
+
+
+
+//== Links
+//
+//## Styling for textual links
+a{
+	&:hover{
+		color: $white;
+		cursor: pointer;
+	}
+}

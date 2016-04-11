@@ -1,0 +1,11 @@
+// ------------------------------------------------------------
+// Main CSS
+//
+// Import SCSS Files from Admin, Styles and Vendors- along with dependencies.
+// ------------------------------------------------------------
+
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+@import 'admin/admin';
+@import 'vendors/vendors';
+@import 'styles/styles';

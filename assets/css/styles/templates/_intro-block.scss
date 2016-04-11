@@ -1,0 +1,50 @@
+
+.intro-block{
+	margin: 0;
+	overflow: auto;
+	padding: 0;
+
+	.intro-block__inner{
+		@include semi-trans-background($green, .40);
+
+		height: 100%;
+		margin: 0;
+		width: 100%;
+
+		.welcome{
+			color: $white;
+			position: relative;
+			text-align: center;
+			h2{
+				font-size: 6em;
+				font-weight: bold;
+				text-shadow: 15px 20px 35px $black;
+			}
+			h5{
+				color: $black;
+				font-weight: 600;
+			}
+			.emoji-container{
+				@media(min-width: $screen-sm-min){
+					margin: 0 auto;
+					width: 75%;
+				}
+				.emoji{
+					transition: all .33s ease-in-out;
+					
+					svg{
+						display: block;
+						margin: auto;
+						width: 80%;
+						@media(min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+							width: 60%;
+						}
+						@media(min-width: $screen-md-min){
+							width: 40%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

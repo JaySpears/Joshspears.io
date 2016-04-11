@@ -1,0 +1,31 @@
+// ------------------------------------------------------------
+// Blockquote Styling
+// ------------------------------------------------------------
+
+blockquote {
+  background: transparent;
+  border-left: 10px solid #999;
+  padding: 0.5em 10px;
+  margin-top: 45px;
+  quotes: "\201C""\201D""\2018""\2019";
+  font-size: 1.000rem
+}
+blockquote:before {
+  color: #333;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote:after {
+  color: #333;
+  content: close-quote;
+  font-size: 2em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}

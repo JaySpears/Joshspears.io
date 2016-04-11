@@ -1,0 +1,5 @@
+
+@mixin semi-trans-background($color, $opacity: 0.3) {
+	background: $color;
+	background: rgba($color, $opacity);
+}

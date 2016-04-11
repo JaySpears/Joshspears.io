@@ -1,0 +1,22 @@
+// ------------------------------------------------------------
+// 
+// Buttons
+// 
+// ------------------------------------------------------------
+
+.button{
+	background: $button-bg-color;
+	border: 3px solid $button-border-color;
+	color: $button-type-color;
+	font-family: $button-font;
+	font-size: 1.250em;
+	margin-bottom: .75em;
+	margin-top: 3em;
+	padding: .55em 1.25em;
+	text-align: center;
+
+	&:hover{
+		background: $button-border-color;
+		color: $button-hover-type;
+	}
+}
