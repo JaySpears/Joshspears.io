@@ -26,17 +26,26 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// Minify JS
+		uglify: {
+			scripts: {
+				src: 'public/assets/js/src/*.js',
+				dest: 'public/assets/js/main.min.js'
+			}
+		},
+
 		// Watch command
 		watch: {
 			styles: {
 				files: 'public/assets/css/src/*.scss',
 				tasks: 'dist-styles',
 				options: {
-					livereload: true,
+					livereload: true
 				}
 			},
 			scripts:{
-				files: ['public/app/app.js']
+				files: 'public/assets/js/src/*.js',
+				tasks: 'dist-scripts',
 			}
 		}
 	});
@@ -44,13 +53,17 @@ module.exports = function(grunt) {
 	// Loads grunt dependencies
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+
+	// Scripts distribution task
+	grunt.registerTask('dist-scripts', ['uglify']);
 
 	// Styles distribution task
 	grunt.registerTask('dist-styles', ['sass', 'cssmin']);
 
 	// Full distribution task
-	grunt.registerTask('dist', ['dist-styles']);
+	grunt.registerTask('dist', ['dist-styles', 'dist-scripts']);
 
 	// Default grunt task
 	grunt.registerTask('default', ['dist', 'watch']);
