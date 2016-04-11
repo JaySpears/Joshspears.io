@@ -9,7 +9,7 @@ module.exports = function (shipit) {
     default: {
       workspace: 'tmp',
       deployTo: config.deploy.path,
-      repositoryUrl: 'https://github.com/JoshSpears3/Portfolio',
+      repositoryUrl: 'https://github.com/JoshSpears3/joshspears.io',
       ignores: ['.git', 'node_modules'],
       rsync: ['--del'],
       keepReleases: 2,
