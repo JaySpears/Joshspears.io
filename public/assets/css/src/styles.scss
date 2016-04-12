@@ -9,9 +9,62 @@ $raleway-stack: 'Raleway', sans-serif;
 
 body{
     background: black;
+    font-family: $raleway-stack;
     h4{
         color: white;
         text-align: center;
-        font-family: $raleway-stack;
+    }
+}
+
+.hero-section{
+    height: 100vh;
+    width: 100%;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../img/hero.png');
+    .container{
+        height: 100vh;
+        .navigation-arrow{
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-bottom: 45px;
+            .navigation-arrow-wrapper{
+                width: 100px;
+                margin: 0 auto;
+                transition: margin 1s;
+                color: white;
+                &:hover{
+                    padding-top: 15px;
+                    margin: 0 auto -15px auto;
+                    cursor: pointer;
+                }
+                p{
+                    letter-spacing: 0.5px;
+                    font-weight: 400;
+                    font-size: 18px;
+                    margin-bottom: 0px;
+                }
+                .fa-chevron-down{
+                    color: white;
+                    font-size: 20px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+.work-section{
+    height: 1200px;
+    width: 100%;
+    padding-top: 40px;
+    h3{
+        margin-top: 0px;
+        text-align: center;
     }
 }
