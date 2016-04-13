@@ -1,5 +1,11 @@
+.clearfix {
+  display: table;
+  content: '';
+  clear: both;
+}
+
 body {
-  background: black;
+  background-color: white;
   font-family: "Raleway", sans-serif;
 }
 body h4 {
@@ -10,14 +16,256 @@ body h4 {
 .hero-section {
   height: 100vh;
   width: 100%;
-  background-color: transparent;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url("../img/hero.png");
+  background-color: rgba(200, 200, 200, 0.1);
 }
 .hero-section .container {
   height: 100vh;
+}
+.hero-section .container #navigation {
+  position: fixed;
+  top: 0;
+  transition: background 1s, box-shadow 1.5s;
+  z-index: 9;
+}
+@media screen and (min-width: 1024px) {
+  .hero-section .container #navigation {
+    right: 0;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  .hero-section .container #navigation {
+    background-color: red;
+    height: 52px;
+    left: 0;
+    right: 0;
+    background-color: red;
+    float: right;
+  }
+}
+.hero-section .container #navigation.fixed {
+  z-index: 1;
+  box-shadow: 0 -12px 15px 9px black;
+  background: rgba(255, 213, 213, 0.8);
+}
+.hero-section .container #navigation.fixed ul {
+  border-left: 1px dotted lightgray;
+}
+.hero-section .container #navigation .mobile-list {
+  float: right;
+  padding-left: 0px;
+  margin-right: 15px;
+  height: 52px;
+  padding: 15px 0px 0px 15px;
+  margin-bottom: 0px;
+  transition: border 1s;
+}
+@media screen and (min-width: 1024px) {
+  .hero-section .container #navigation .mobile-list {
+    display: none;
+  }
+}
+.hero-section .container #navigation .mobile-list li {
+  list-style: none;
+  height: 3px;
+  width: 30px;
+  margin-bottom: 8px;
+  background-color: white;
+}
+.hero-section .container #navigation .desktop-nav-header p {
+  text-align: center;
+  color: white;
+}
+.hero-section .container #navigation .desktop-list {
+  display: none;
+  height: 50px;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.6s ease-in-out;
+}
+.hero-section .container #navigation .desktop-list:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.hero-section .container #navigation .desktop-list.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+.hero-section .container #navigation .desktop-list.unextended {
+  width: 55px;
+}
+.hero-section .container #navigation .desktop-list.unextended .desktop-nav-header {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.hero-section .container #navigation .desktop-list .desktop-nav-header {
+  transition: opacity 0.5s;
+  transition-delay: 0.3s;
+  opacity: 1;
+  color: white;
+  padding-top: 15px;
+}
+.hero-section .container #navigation .desktop-list ul {
+  float: left;
+  padding-top: 15.5px;
+  padding-left: 0px;
+  width: 57px;
+}
+.hero-section .container #navigation .desktop-list ul li {
+  height: 3px;
+  border-radius: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin-left: 15px;
+  list-style: none;
+  margin-bottom: 5px;
+  opacity: 1;
+  transition: transform 0.7s, opacity 0.2s;
+}
+.hero-section .container #navigation .desktop-list.active ul li {
+  transition: transform 0.7s, opacity 0.2s;
+}
+.hero-section .container #navigation .desktop-list.active ul li:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+.hero-section .container #navigation .desktop-list.active ul li:nth-child(2) {
+  opacity: 0;
+}
+.hero-section .container #navigation .desktop-list.active ul li:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+.hero-section .container #navigation .desktop-list:hover {
+  cursor: pointer;
+}
+.hero-section .container #navigation .desktop-list .plus {
+  transition: all 1s;
+  position: absolute;
+  text-align: center;
+  font-size: 65px;
+  font-weight: 300;
+  color: black;
+  margin-bottom: 0;
+  right: 0;
+  left: 0;
+  top: -13px;
+}
+.hero-section .container #navigation .desktop-list .plus.active {
+  color: white;
+  transform: rotate(675deg);
+}
+.hero-section .container #navigation .desktop-list i {
+  color: white;
+}
+.hero-section .container #navigation .desktop-list .menu-item-one,
+.hero-section .container #navigation .desktop-list .menu-item-two,
+.hero-section .container #navigation .desktop-list .menu-item-three {
+  opacity: 0;
+  position: absolute;
+  color: white;
+  left: 100px;
+  padding-top: 2px;
+  transform: translate(150px, 0px);
+  transition: transform 0.5s, opacity 0.2s;
+}
+.hero-section .container #navigation .desktop-list .menu-item-one.active,
+.hero-section .container #navigation .desktop-list .menu-item-two.active,
+.hero-section .container #navigation .desktop-list .menu-item-three.active {
+  transform: translate(-100px, 0px);
+  transition: transform 0.5s, opacity 0.2s;
+  opacity: 1;
+}
+.hero-section .container #navigation .desktop-list .menu-item-one.hoverState {
+  transform: translate(-197px, 0);
+}
+.hero-section .container #navigation .desktop-list .menu-item-two.hoverState {
+  transform: translate(-198px, 0);
+}
+.hero-section .container #navigation .desktop-list .menu-item-three.hoverState {
+  transform: translate(-208px, 0);
+}
+.hero-section .container #navigation .desktop-list .fa-home {
+  left: 116px;
+  font-size: 25px;
+}
+.hero-section .container #navigation .desktop-list .fa-code {
+  left: 116px;
+  font-size: 22px;
+}
+.hero-section .container #navigation .desktop-list .fa-envelope-o {
+  left: 118px;
+  font-size: 22px;
+}
+.hero-section .container #navigation .desktop-list .fa-home,
+.hero-section .container #navigation .desktop-list .fa-code,
+.hero-section .container #navigation .desktop-list .fa-envelope-o {
+  opacity: 0;
+  position: absolute;
+  right: 0px;
+  transform: translate(150px, 0px);
+  transition: transform 0.5s, opacity 0.2s;
+}
+.hero-section .container #navigation .desktop-list .fa-home.active,
+.hero-section .container #navigation .desktop-list .fa-code.active,
+.hero-section .container #navigation .desktop-list .fa-envelope-o.active {
+  transform: translate(-100px, 0px);
+  transition: transform 0.5s, opacity 0.2s;
+  opacity: 1;
+}
+.hero-section .container #navigation .desktop-list .menu-item {
+  padding-left: 58px;
+}
+.hero-section .container #navigation .desktop-list .menu-item-one,
+.hero-section .container #navigation .desktop-list .fa-home {
+  top: 80px;
+  transition-delay: 0.3s;
+}
+.hero-section .container #navigation .desktop-list .menu-item-one.active,
+.hero-section .container #navigation .desktop-list .fa-home.active {
+  transition-delay: 0.2s;
+}
+.hero-section .container #navigation .desktop-list .menu-item-two,
+.hero-section .container #navigation .desktop-list .fa-code {
+  top: 130px;
+  transition-delay: 0.2s;
+}
+.hero-section .container #navigation .desktop-list .menu-item-two.active,
+.hero-section .container #navigation .desktop-list .fa-code.active {
+  transition-delay: 0.3s;
+}
+.hero-section .container #navigation .desktop-list .menu-item-three,
+.hero-section .container #navigation .desktop-list .fa-envelope-o {
+  top: 180px;
+  transition-delay: 0.1s;
+}
+.hero-section .container #navigation .desktop-list .menu-item-three.active,
+.hero-section .container #navigation .desktop-list .fa-envelope-o.active {
+  transition-delay: 0.4s;
+}
+@media screen and (min-width: 1024px) {
+  .hero-section .container #navigation .desktop-list {
+    display: block;
+  }
+}
+.hero-section .container .hero-intro {
+  display: none;
+  height: 50vh;
+  position: relative;
+  text-align: center;
+}
+.hero-section .container .hero-intro h1 {
+  font-size: 42px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+}
+.hero-section .container .hero-intro h4 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -20px;
 }
 .hero-section .container .navigation-arrow {
   text-align: center;
@@ -29,13 +277,10 @@ body h4 {
 }
 .hero-section .container .navigation-arrow .navigation-arrow-wrapper {
   width: 100px;
-  margin: 0 auto;
-  transition: margin 1s;
+  margin: 0 auto 30px auto;
   color: white;
 }
 .hero-section .container .navigation-arrow .navigation-arrow-wrapper:hover {
-  padding-top: 15px;
-  margin: 0 auto -15px auto;
   cursor: pointer;
 }
 .hero-section .container .navigation-arrow .navigation-arrow-wrapper p {
@@ -44,10 +289,18 @@ body h4 {
   font-size: 18px;
   margin-bottom: 0px;
 }
-.hero-section .container .navigation-arrow .navigation-arrow-wrapper .fa-chevron-down {
+.hero-section .container .navigation-arrow .navigation-arrow-wrapper .fa-angle-down {
   color: white;
-  font-size: 20px;
+  font-size: 60px;
   font-weight: 400;
+  transition: padding 0.8s, color 0.8s;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.hero-section .container .navigation-arrow .navigation-arrow-wrapper .fa-angle-down.wave {
+  padding-top: 5px;
+  color: lightblue;
 }
 
 .work-section {
