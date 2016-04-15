@@ -26,13 +26,7 @@ body{
     color: white;
     transition: all 1.4s ease-in-out;
     @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-        transition: all 1.4s;
-        background: white;
-        padding-top: 52px;
-        &.active{
-            transition: all 1s !important;
-            padding-top: 223px;
-        }
+        background-color: black;
     }
 }
 
@@ -44,42 +38,37 @@ body{
     background-color: rgba(0,0,0,0.6);
     top: 0px;
     @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+        height: 100vh;
         display: block;
-    }
-}
-
-.mobile-navigation-placeholder{
-    display: none;
-    @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-        display: block;
-        height: 52px;
-        width: 100%;
-        transition: all 1.5s;
+        transition: all 0.7s;
+        &.mobile-detection-height{
+            height: calc(100vh - 70px);
+        }
         &.active{
-            transition: all 1s;
-            height: 223px;
+            transition: all 0.7s;
+            top: 105px;
         }
     }
 }
 
+
+
 .navigation{
     @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-        transition: all 1.4s !important;
-        background: rgba(0,0,0,.8);
+        transition: all 1.5s !important;
+        background: rgba(0,0,0,0.3);
     }
     &.active{
         @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-            height: 224px !important;
-            transition: all 1s !important;
-            background: rgba(0,0,0,.7);
-            box-shadow: inset 0 -20px 15px -20px darkred;
+            transition: all 1.5s !important;
+            background: rgba(0,0,0,1);
+            box-shadow: 0 0px 22px 2px black;
         }
     }
 }
 
 #navigation{
     top: 0;
-    transition: background 1s, box-shadow 1.5s;
     z-index: 9;
     @media screen and (min-width: $desktop-min){
         right: 0;
@@ -113,9 +102,6 @@ body{
         }
         &.active{
             background: rgba(255, 255, 255, 0.2);
-            @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-                height: 224px;
-            }
         }
         &.extended{
             width: 200px;
@@ -147,14 +133,14 @@ body{
             width: 1px;
             float: left;
             height: 52px;
-            border-right: 1px dotted white;
-            transition: all 1s;
+            border-right: 1px solid rgba(255,255,255,0.3);
+            transition: all 1s !important;
             @media screen and (min-width: $desktop-min){
                 display: none;
             }
             &.active{
                 transition: all 1s;
-                transform: rotate(90deg) translate(26px,30px);
+                border-right: 1px solid rgba(255,255,255,1);
             }
         }
         ul{
@@ -180,7 +166,7 @@ body{
                 opacity: 1;
                 transition: transform 0.7s, opacity 0.2s;
                 @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-                    background-color: crimson;
+                    background-color: white;
                 }
                 &:nth-child(2){
                     transition: transform 0.7s, opacity 2s;
@@ -210,7 +196,8 @@ body{
             color: white;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
                 width: 25px;
-                color: crimson;
+                display: none;
+                color: lightblue;
             }
         }
         .menu-item-one,
@@ -257,15 +244,18 @@ body{
             }
         }
         .menu-item{
-            padding-left: 58px;
+            @media screen and (min-width: $desktop-min){
+                padding-left: 58px;
+            }
         }
         .menu-item-one,
         .fa-angle-double-up{
             top: 80px;
             transition-delay: 0.53s;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-                top: 70px;
-                transition-delay: 0.37s;
+                top: 15px;
+                margin-left: 78px;
+                transition-delay: 0.4s;
             }
             &.active{
                 transition-delay: 0.2s;
@@ -276,8 +266,9 @@ body{
             top: 130px;
             transition-delay: 0.34s;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-                top: 120px;
-                transition-delay: 0.17s;
+                top: 15px;
+                margin-left: 138px;
+                transition-delay: 0.3s;
             }
             &.active{
                 transition-delay: 0.3s;
@@ -288,8 +279,9 @@ body{
             top: 180px;
             transition-delay: 0.2s;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-                top: 170px;
-                transition-delay: 0.02s;
+                top: 15px;
+                margin-left: 216px;
+                transition-delay: 0.2s;
             }
             &.active{
                 transition-delay: 0.4s;
@@ -303,6 +295,12 @@ body{
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+        height: 100vh;
+        &.mobile-detection-height{
+            height: calc(100vh - 70px);
+        }
+    }
     @media screen and (min-width: $desktop-min){
         background-color: rgba(0,0,0, 0.6);
         box-shadow: 0 0 250px 10px #1a1a1a inset;
@@ -318,7 +316,7 @@ body{
             position: relative;
             text-align: center;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-                height: 46vh;
+                height: 47vh;
             }
             h1{
                 font-size: 42px;
@@ -327,12 +325,18 @@ body{
                 left: 0;
                 right: 0;
                 color: white;
+                @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+                    font-size: 38px;
+                }
             }
             h4{
                 position: absolute;
                 left: 0;
                 right: 0;
                 bottom: -20px;
+                @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+                    font-size: 16px;
+                }
             }
         }
         .navigation-arrow{
@@ -342,6 +346,14 @@ body{
             left: 0;
             right: 0;
             margin-bottom: 45px;
+            @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+                transition: all 0.7s;
+                &.active{
+                    transition: all 0.7s;
+                    margin-bottom: -60px;
+                }
+            }
+
             .navigation-arrow-wrapper{
                 width: 100px;
                 margin: 0 auto 30px auto;
