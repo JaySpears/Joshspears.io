@@ -12,13 +12,7 @@ body {
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   body {
-    transition: all 1.4s;
-    background: white;
-    padding-top: 52px;
-  }
-  body.active {
-    transition: all 1s !important;
-    padding-top: 223px;
+    background-color: black;
   }
 }
 
@@ -32,44 +26,35 @@ body {
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .mobile-overlay {
+    height: 100vh;
     display: block;
+    transition: all 0.7s;
   }
-}
-
-.mobile-navigation-placeholder {
-  display: none;
-}
-@media screen and (min-width: 320px) and (max-width: 1023px) {
-  .mobile-navigation-placeholder {
-    display: block;
-    height: 52px;
-    width: 100%;
-    transition: all 1.5s;
+  .mobile-overlay.mobile-detection-height {
+    height: calc(100vh - 70px);
   }
-  .mobile-navigation-placeholder.active {
-    transition: all 1s;
-    height: 223px;
+  .mobile-overlay.active {
+    transition: all 0.7s;
+    top: 105px;
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .navigation {
-    transition: all 1.4s !important;
-    background: rgba(0, 0, 0, 0.8);
+    transition: all 1.5s !important;
+    background: rgba(0, 0, 0, 0.3);
   }
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .navigation.active {
-    height: 224px !important;
-    transition: all 1s !important;
-    background: rgba(0, 0, 0, 0.7);
-    box-shadow: inset 0 -20px 15px -20px darkred;
+    transition: all 1.5s !important;
+    background: black;
+    box-shadow: 0 0px 22px 2px black;
   }
 }
 
 #navigation {
   top: 0;
-  transition: background 1s, box-shadow 1.5s;
   z-index: 9;
 }
 @media screen and (min-width: 1024px) {
@@ -112,11 +97,6 @@ body {
 #navigation .navigation-list.active {
   background: rgba(255, 255, 255, 0.2);
 }
-@media screen and (min-width: 320px) and (max-width: 1023px) {
-  #navigation .navigation-list.active {
-    height: 224px;
-  }
-}
 #navigation .navigation-list.extended {
   width: 200px;
 }
@@ -149,8 +129,8 @@ body {
   width: 1px;
   float: left;
   height: 52px;
-  border-right: 1px dotted white;
-  transition: all 1s;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 1s !important;
 }
 @media screen and (min-width: 1024px) {
   #navigation .navigation-list .mobile-seperator {
@@ -159,7 +139,7 @@ body {
 }
 #navigation .navigation-list .mobile-seperator.active {
   transition: all 1s;
-  transform: rotate(90deg) translate(26px, 30px);
+  border-right: 1px solid white;
 }
 #navigation .navigation-list ul {
   float: left;
@@ -189,7 +169,7 @@ body {
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   #navigation .navigation-list ul li {
-    background-color: crimson;
+    background-color: white;
   }
 }
 #navigation .navigation-list ul li:nth-child(2) {
@@ -216,7 +196,8 @@ body {
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   #navigation .navigation-list i {
     width: 25px;
-    color: crimson;
+    display: none;
+    color: lightblue;
   }
 }
 #navigation .navigation-list .menu-item-one,
@@ -266,8 +247,10 @@ body {
   transition: transform 0.5s, opacity 0.2s;
   opacity: 1;
 }
-#navigation .navigation-list .menu-item {
-  padding-left: 58px;
+@media screen and (min-width: 1024px) {
+  #navigation .navigation-list .menu-item {
+    padding-left: 58px;
+  }
 }
 #navigation .navigation-list .menu-item-one,
 #navigation .navigation-list .fa-angle-double-up {
@@ -277,8 +260,9 @@ body {
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   #navigation .navigation-list .menu-item-one,
   #navigation .navigation-list .fa-angle-double-up {
-    top: 70px;
-    transition-delay: 0.37s;
+    top: 15px;
+    margin-left: 78px;
+    transition-delay: 0.4s;
   }
 }
 #navigation .navigation-list .menu-item-one.active,
@@ -293,8 +277,9 @@ body {
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   #navigation .navigation-list .menu-item-two,
   #navigation .navigation-list .fa-code {
-    top: 120px;
-    transition-delay: 0.17s;
+    top: 15px;
+    margin-left: 138px;
+    transition-delay: 0.3s;
   }
 }
 #navigation .navigation-list .menu-item-two.active,
@@ -309,8 +294,9 @@ body {
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   #navigation .navigation-list .menu-item-three,
   #navigation .navigation-list .fa-envelope-o {
-    top: 170px;
-    transition-delay: 0.02s;
+    top: 15px;
+    margin-left: 216px;
+    transition-delay: 0.2s;
   }
 }
 #navigation .navigation-list .menu-item-three.active,
@@ -324,6 +310,14 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+}
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  .hero-section {
+    height: 100vh;
+  }
+  .hero-section.mobile-detection-height {
+    height: calc(100vh - 70px);
+  }
 }
 @media screen and (min-width: 1024px) {
   .hero-section {
@@ -345,7 +339,7 @@ body {
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section .container .hero-intro {
-    height: 46vh;
+    height: 47vh;
   }
 }
 .hero-section .container .hero-intro h1 {
@@ -356,11 +350,21 @@ body {
   right: 0;
   color: white;
 }
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  .hero-section .container .hero-intro h1 {
+    font-size: 38px;
+  }
+}
 .hero-section .container .hero-intro h4 {
   position: absolute;
   left: 0;
   right: 0;
   bottom: -20px;
+}
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  .hero-section .container .hero-intro h4 {
+    font-size: 16px;
+  }
 }
 .hero-section .container .navigation-arrow {
   text-align: center;
@@ -369,6 +373,15 @@ body {
   left: 0;
   right: 0;
   margin-bottom: 45px;
+}
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  .hero-section .container .navigation-arrow {
+    transition: all 0.7s;
+  }
+  .hero-section .container .navigation-arrow.active {
+    transition: all 0.7s;
+    margin-bottom: -60px;
+  }
 }
 .hero-section .container .navigation-arrow .navigation-arrow-wrapper {
   width: 100px;
