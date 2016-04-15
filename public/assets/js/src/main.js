@@ -1,19 +1,15 @@
 'use strict';
 $(function () {
 
-
-    // var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    // if (isMobile) {
-    //   $('body').css('padding-bottom', '424px');
-    // }
+    setInterval(function () {
+        $('.fa-angle-down').toggleClass('wave');
+    }, 800);
 
     var nav = $('#navigation');
     var heroSection = $('.hero-section');
 
     if ($(window).width() >= 1024) {
-        setInterval(function () {
-            $('.fa-angle-down').toggleClass('wave');
-        }, 800);
+
         $('.parallax-window').data('image-src', 'public/assets/img/hero.png');
         $('.navigation-list').on('click', function(){
             setTimeout(function(){
