@@ -8,7 +8,7 @@ body {
   background-color: #999999;
   font-family: "Raleway", sans-serif;
   color: white;
-  transition: all 1s ease-in-out;
+  transition: all 1.4s ease-in-out;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   body {
@@ -16,103 +16,124 @@ body {
     background: white;
     padding-top: 52px;
   }
-}
-@media screen and (min-width: 320px) and (max-width: 1023px) {
   body.active {
+    transition: all 1s !important;
     padding-top: 223px;
-    transition: all 1s;
   }
 }
 
-.hero-section {
+.mobile-overlay {
+  display: none;
+  position: absolute;
   height: 100vh;
   width: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: rgba(200, 200, 200, 0.1);
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0px;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section .navigation {
+  .mobile-overlay {
+    display: block;
+  }
+}
+
+.mobile-navigation-placeholder {
+  display: none;
+}
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  .mobile-navigation-placeholder {
+    display: block;
+    height: 52px;
+    width: 100%;
+    transition: all 1.5s;
+  }
+  .mobile-navigation-placeholder.active {
+    transition: all 1s;
+    height: 223px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  .navigation {
     transition: all 1.4s !important;
+    background: rgba(0, 0, 0, 0.8);
   }
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section .navigation.active {
+  .navigation.active {
     height: 224px !important;
     transition: all 1s !important;
-    background: white !important;
-    box-shadow: inset 0 -20px 15px -20px #336699;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0 -20px 15px -20px darkred;
   }
 }
-.hero-section #navigation {
+
+#navigation {
   top: 0;
   transition: background 1s, box-shadow 1.5s;
   z-index: 9;
 }
 @media screen and (min-width: 1024px) {
-  .hero-section #navigation {
+  #navigation {
     right: 0;
     margin-top: 20px;
     position: fixed;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section #navigation {
-    background: white;
+  #navigation {
     position: fixed;
     height: 52px;
     left: 0;
     right: 0;
   }
 }
-.hero-section #navigation.fixed {
+#navigation.fixed {
   z-index: 1;
   box-shadow: 0 -12px 15px 9px black;
   background: rgba(255, 213, 213, 0.8);
 }
-.hero-section #navigation.fixed ul {
+#navigation.fixed ul {
   border-left: 1px dotted lightgray;
 }
-.hero-section #navigation .navigation-list {
+#navigation .navigation-list {
   height: 50px;
   background: rgba(255, 255, 255, 0.1);
   transition: width 0.6s ease-in-out;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section #navigation .navigation-list {
+  #navigation .navigation-list {
     transition: all 1s ease-in-out;
     background: none !important;
   }
 }
-.hero-section #navigation .navigation-list:hover {
+#navigation .navigation-list:hover {
   background: rgba(255, 255, 255, 0.2);
 }
-.hero-section #navigation .navigation-list.active {
+#navigation .navigation-list.active {
   background: rgba(255, 255, 255, 0.2);
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section #navigation .navigation-list.active {
+  #navigation .navigation-list.active {
     height: 224px;
   }
 }
-.hero-section #navigation .navigation-list.extended {
+#navigation .navigation-list.extended {
   width: 200px;
 }
-.hero-section #navigation .navigation-list.extended .nav-header {
+#navigation .navigation-list.extended .nav-header {
   opacity: 1;
   transition: transform 0s !important, opacity 0.5s;
   transition-delay: 0.2s !important;
 }
-.hero-section #navigation .navigation-list.unextended {
+#navigation .navigation-list.unextended {
   width: 55px;
 }
-.hero-section #navigation .navigation-list.unextended .nav-header {
+#navigation .navigation-list.unextended .nav-header {
   opacity: 0;
   transition: transform 0s !important, opacity 0.5s;
   transition-delay: 0s !important;
 }
-.hero-section #navigation .navigation-list .nav-header {
+#navigation .navigation-list .nav-header {
   transition: opacity 0.5s;
   transition-delay: 0.25s;
   opacity: 1;
@@ -120,28 +141,27 @@ body {
   padding-top: 15px;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section #navigation .navigation-list .nav-header {
+  #navigation .navigation-list .nav-header {
     display: none;
   }
 }
-.hero-section #navigation .navigation-list .mobile-seperator {
+#navigation .navigation-list .mobile-seperator {
   width: 1px;
   float: left;
   height: 52px;
-  background-color: white;
-  border-right: 1px dotted #336699;
+  border-right: 1px dotted white;
   transition: all 1s;
 }
 @media screen and (min-width: 1024px) {
-  .hero-section #navigation .navigation-list .mobile-seperator {
+  #navigation .navigation-list .mobile-seperator {
     display: none;
   }
 }
-.hero-section #navigation .navigation-list .mobile-seperator.active {
+#navigation .navigation-list .mobile-seperator.active {
   transition: all 1s;
   transform: rotate(90deg) translate(26px, 30px);
 }
-.hero-section #navigation .navigation-list ul {
+#navigation .navigation-list ul {
   float: left;
   padding-top: 15.5px;
   padding-left: 0px;
@@ -150,13 +170,13 @@ body {
   padding-bottom: 10px;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section #navigation .navigation-list ul {
+  #navigation .navigation-list ul {
     padding-top: 16.5px;
     position: relative;
     z-index: 999;
   }
 }
-.hero-section #navigation .navigation-list ul li {
+#navigation .navigation-list ul li {
   height: 3px;
   border-radius: 3px;
   width: 25px;
@@ -168,39 +188,40 @@ body {
   transition: transform 0.7s, opacity 0.2s;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section #navigation .navigation-list ul li {
-    background-color: black;
+  #navigation .navigation-list ul li {
+    background-color: crimson;
   }
 }
-.hero-section #navigation .navigation-list ul li:nth-child(2) {
+#navigation .navigation-list ul li:nth-child(2) {
   transition: transform 0.7s, opacity 2s;
 }
-.hero-section #navigation .navigation-list.active ul li:nth-child(1) {
+#navigation .navigation-list.active ul li:nth-child(1) {
   transition: transform 0.7s, opacity 0.2s;
   transform: rotate(-45deg) translate(-6px, 6px);
 }
-.hero-section #navigation .navigation-list.active ul li:nth-child(2) {
+#navigation .navigation-list.active ul li:nth-child(2) {
   transition: transform 0.7s, opacity 0.2s;
   opacity: 0;
 }
-.hero-section #navigation .navigation-list.active ul li:nth-child(3) {
+#navigation .navigation-list.active ul li:nth-child(3) {
   transition: transform 0.7s, opacity 0.2s;
   transform: rotate(45deg) translate(-5px, -5px);
 }
-.hero-section #navigation .navigation-list:hover {
+#navigation .navigation-list:hover {
   cursor: pointer;
 }
-.hero-section #navigation .navigation-list i {
+#navigation .navigation-list i {
   color: white;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section #navigation .navigation-list i {
+  #navigation .navigation-list i {
     width: 25px;
+    color: crimson;
   }
 }
-.hero-section #navigation .navigation-list .menu-item-one,
-.hero-section #navigation .navigation-list .menu-item-two,
-.hero-section #navigation .navigation-list .menu-item-three {
+#navigation .navigation-list .menu-item-one,
+#navigation .navigation-list .menu-item-two,
+#navigation .navigation-list .menu-item-three {
   opacity: 0;
   position: absolute;
   color: white;
@@ -209,95 +230,106 @@ body {
   transform: translate(150px, 0px);
   transition: transform 0.5s, opacity 0.2s;
 }
-.hero-section #navigation .navigation-list .menu-item-one.active,
-.hero-section #navigation .navigation-list .menu-item-two.active,
-.hero-section #navigation .navigation-list .menu-item-three.active {
+#navigation .navigation-list .menu-item-one.active,
+#navigation .navigation-list .menu-item-two.active,
+#navigation .navigation-list .menu-item-three.active {
   transform: translate(-100px, 0px);
   transition: transform 0.5s, opacity 0.2s;
   opacity: 1;
 }
-.hero-section #navigation .navigation-list .fa-angle-double-up {
+#navigation .navigation-list .fa-angle-double-up {
   left: 120.5px;
   font-weight: 300;
   font-size: 25px;
 }
-.hero-section #navigation .navigation-list .fa-code {
+#navigation .navigation-list .fa-code {
   left: 118px;
   font-size: 22px;
 }
-.hero-section #navigation .navigation-list .fa-envelope-o {
+#navigation .navigation-list .fa-envelope-o {
   left: 120.5px;
   font-size: 22px;
 }
-.hero-section #navigation .navigation-list .fa-angle-double-up,
-.hero-section #navigation .navigation-list .fa-code,
-.hero-section #navigation .navigation-list .fa-envelope-o {
+#navigation .navigation-list .fa-angle-double-up,
+#navigation .navigation-list .fa-code,
+#navigation .navigation-list .fa-envelope-o {
   opacity: 0;
   position: absolute;
   right: 0px;
   transform: translate(150px, 0px);
   transition: transform 0.5s, opacity 0.2s;
 }
-.hero-section #navigation .navigation-list .fa-angle-double-up.active,
-.hero-section #navigation .navigation-list .fa-code.active,
-.hero-section #navigation .navigation-list .fa-envelope-o.active {
+#navigation .navigation-list .fa-angle-double-up.active,
+#navigation .navigation-list .fa-code.active,
+#navigation .navigation-list .fa-envelope-o.active {
   transform: translate(-100px, 0px);
   transition: transform 0.5s, opacity 0.2s;
   opacity: 1;
 }
-.hero-section #navigation .navigation-list .menu-item {
+#navigation .navigation-list .menu-item {
   padding-left: 58px;
 }
-.hero-section #navigation .navigation-list .menu-item-one,
-.hero-section #navigation .navigation-list .fa-angle-double-up {
+#navigation .navigation-list .menu-item-one,
+#navigation .navigation-list .fa-angle-double-up {
   top: 80px;
   transition-delay: 0.53s;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section #navigation .navigation-list .menu-item-one,
-  .hero-section #navigation .navigation-list .fa-angle-double-up {
+  #navigation .navigation-list .menu-item-one,
+  #navigation .navigation-list .fa-angle-double-up {
     top: 70px;
-    color: black;
     transition-delay: 0.37s;
   }
 }
-.hero-section #navigation .navigation-list .menu-item-one.active,
-.hero-section #navigation .navigation-list .fa-angle-double-up.active {
+#navigation .navigation-list .menu-item-one.active,
+#navigation .navigation-list .fa-angle-double-up.active {
   transition-delay: 0.2s;
 }
-.hero-section #navigation .navigation-list .menu-item-two,
-.hero-section #navigation .navigation-list .fa-code {
+#navigation .navigation-list .menu-item-two,
+#navigation .navigation-list .fa-code {
   top: 130px;
   transition-delay: 0.34s;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section #navigation .navigation-list .menu-item-two,
-  .hero-section #navigation .navigation-list .fa-code {
+  #navigation .navigation-list .menu-item-two,
+  #navigation .navigation-list .fa-code {
     top: 120px;
-    color: black;
     transition-delay: 0.17s;
   }
 }
-.hero-section #navigation .navigation-list .menu-item-two.active,
-.hero-section #navigation .navigation-list .fa-code.active {
+#navigation .navigation-list .menu-item-two.active,
+#navigation .navigation-list .fa-code.active {
   transition-delay: 0.3s;
 }
-.hero-section #navigation .navigation-list .menu-item-three,
-.hero-section #navigation .navigation-list .fa-envelope-o {
+#navigation .navigation-list .menu-item-three,
+#navigation .navigation-list .fa-envelope-o {
   top: 180px;
   transition-delay: 0.2s;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
-  .hero-section #navigation .navigation-list .menu-item-three,
-  .hero-section #navigation .navigation-list .fa-envelope-o {
+  #navigation .navigation-list .menu-item-three,
+  #navigation .navigation-list .fa-envelope-o {
     top: 170px;
-    color: black;
     transition-delay: 0.02s;
   }
 }
-.hero-section #navigation .navigation-list .menu-item-three.active,
-.hero-section #navigation .navigation-list .fa-envelope-o.active {
+#navigation .navigation-list .menu-item-three.active,
+#navigation .navigation-list .fa-envelope-o.active {
   transition-delay: 0.4s;
+}
+
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 1024px) {
+  .hero-section {
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 250px 10px #1a1a1a inset;
+  }
 }
 .hero-section .container {
   height: 100vh;
@@ -307,7 +339,7 @@ body {
 }
 .hero-section .container .hero-intro {
   display: none;
-  height: 50vh;
+  height: 55vh;
   position: relative;
   text-align: center;
 }
