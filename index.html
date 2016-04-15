@@ -16,35 +16,30 @@
     </head>
     <body>
         <section>
-            <div class="parallax-window hero-section" data-parallax="scroll" data-image-src="public/assets/img/hero.png">
-                <div class="container">
-                    <div id="navigation">
-                        <ul class="mobile-list">
+            <div class="parallax-window hero-section" data-parallax="scroll" data-image-src="public/assets/img/hero.png" id="hero">
+                <div id="navigation" class="navigation">
+                    <div class="navigation-list">
+                        <ul>
                             <li></li>
                             <li></li>
                             <li></li>
                         </ul>
-                        <div class="desktop-list">
-                            <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                            <p class="desktop-nav-header">MENU</p>
-                            <div class="clearfix">
-                                <i class="fa fa-home" aria-hidden="true"></i>
-                                <p class="menu-item menu-item-one">Home</p>
-                            </div>
-                            <div class="clearfix">
-                                <i class="fa fa-code" aria-hidden="true"></i>
-                                <p class="menu-item menu-item-two">Builds</p>
-                            </div>
-                            <div class="clearfix">
-                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                <p class="menu-item menu-item-three">Contact</p>
-                            </div>
+                        <p class="nav-header">MENU</p><p class="mobile-seperator"></p>
+                        <div class="clearfix">
+                            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                            <a href="#hero"><p class="menu-item menu-item-one">Top</p></a>
+                        </div>
+                        <div class="clearfix">
+                            <i class="fa fa-code" aria-hidden="true"></i>
+                            <a href="#builds"><p class="menu-item menu-item-two">Builds</p></a>
+                        </div>
+                        <div class="clearfix">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <a href="#contact"><p class="menu-item menu-item-three">Contact</p></a>
                         </div>
                     </div>
+                </div>
+                <div class="container">
                     <div class="hero-intro">
                         <h1>Hello, <span>I'm Josh!</span></h1>
                         <h4>I build all things web.</h4>
@@ -58,10 +53,16 @@
             </div>
         </section>
         <section>
-            <div class="work-section" id="work">
-                <h3>Builds</h3>
+            <div class="builds-section" id="builds">
             </div>
         </section>
+        <section>
+            <div class="contact-section" id="contact">
+            </div>
+        </section>
+        <footer>
+
+        </footer>
         <script src="node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
         <script src="node_modules/jquery-easing/dist/jquery.easing.1.3.umd.min.js"></script>
         <script src="public/assets/js/parallax.min.js" charset="utf-8"></script>
