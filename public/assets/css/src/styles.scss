@@ -10,9 +10,10 @@ $alice-stack: 'Alice', serif;
 $raleway-stack: 'Raleway', sans-serif;
 
 //Colors
-$blue: #336699;
-$grey-primary: #666666;
-$grey-secondary: #999999;
+$white: white;
+$primary: #003333;
+$secondary: #669999;
+$tertiary: #999999;
 
 .clearfix{
     display: table;
@@ -21,37 +22,14 @@ $grey-secondary: #999999;
 }
 
 body{
-    background-color: $grey-secondary;
+    background-color: $primary;
     font-family: $raleway-stack;
-    color: white;
+    color: $white;
     transition: all 1.4s ease-in-out;
     @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
         background-color: black;
     }
 }
-
-.mobile-overlay{
-    display: none;
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(0,0,0,0.6);
-    top: 0px;
-    @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-        height: 100vh;
-        display: block;
-        transition: all 0.7s;
-        &.mobile-detection-height{
-            height: calc(100vh - 70px);
-        }
-        &.active{
-            transition: all 0.7s;
-            top: 105px;
-        }
-    }
-}
-
-
 
 .navigation{
     @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
@@ -123,7 +101,7 @@ body{
             transition: opacity 0.5s;
             transition-delay: 0.25s;
             opacity: 1;
-            color: white;
+            color: $white;
             padding-top: 15px;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
                 display: none;
@@ -166,7 +144,7 @@ body{
                 opacity: 1;
                 transition: transform 0.7s, opacity 0.2s;
                 @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-                    background-color: white;
+                    background-color: $white;
                 }
                 &:nth-child(2){
                     transition: transform 0.7s, opacity 2s;
@@ -193,7 +171,7 @@ body{
             cursor: pointer;
         }
         i{
-            color: white;
+            color: $white;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
                 width: 25px;
                 display: none;
@@ -205,7 +183,7 @@ body{
         .menu-item-three{
             opacity: 0;
             position: absolute;
-            color: white;
+            color: $white;
             left: 100px;
             padding-top: 2px;
             transform: translate(150px, 0px);
@@ -301,10 +279,6 @@ body{
             height: calc(100vh - 70px);
         }
     }
-    @media screen and (min-width: $desktop-min){
-        background-color: rgba(0,0,0, 0.6);
-        box-shadow: 0 0 250px 10px #1a1a1a inset;
-    }
     .container{
         height: 100vh;
         h4{
@@ -324,7 +298,7 @@ body{
                 bottom: 0;
                 left: 0;
                 right: 0;
-                color: white;
+                color: $white;
                 @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
                     font-size: 38px;
                 }
@@ -357,7 +331,7 @@ body{
             .navigation-arrow-wrapper{
                 width: 100px;
                 margin: 0 auto 30px auto;
-                color: white;
+                color: $white;
                 &:hover{
                     cursor: pointer;
                 }
@@ -368,7 +342,7 @@ body{
                     margin-bottom: 0px;
                 }
                 .fa-angle-down{
-                    color: white;
+                    color: $white;
                     font-size: 60px;
                     font-weight: 400;
                     transition: padding 0.8s, color 0.8s;
@@ -377,7 +351,7 @@ body{
                     right: 0;
                     &.wave{
                         padding-top: 5px;
-                        color: lightblue;
+                        color: $tertiary;
                     }
                 }
             }
@@ -386,10 +360,10 @@ body{
 }
 
 .builds-section{
-    height: 1000px;
+    height: 600px;
     width: 100%;
     padding-top: 40px;
-    background-color: $grey-secondary;
+    background-color: $primary;
     h3{
         margin-top: 0px;
         text-align: center;
@@ -397,10 +371,10 @@ body{
 }
 
 .contact-section{
-    height: 1000px;
+    height: 600px;
     width: 100%;
     padding-top: 40px;
-    background-color: $grey-primary;
+    background-color: $secondary;
     h3{
         margin-top: 0px;
         text-align: center;
@@ -411,7 +385,7 @@ footer{
     height: 200px;
     width: 100%;
     padding-top: 40px;
-    background-color: $blue;
+    background-color: $tertiary;
     h3{
         margin-top: 0px;
         text-align: center;
