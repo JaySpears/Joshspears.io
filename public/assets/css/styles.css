@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #999999;
+  background-color: #003333;
   font-family: "Raleway", sans-serif;
   color: white;
   transition: all 1.4s ease-in-out;
@@ -13,29 +13,6 @@ body {
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   body {
     background-color: black;
-  }
-}
-
-.mobile-overlay {
-  display: none;
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  top: 0px;
-}
-@media screen and (min-width: 320px) and (max-width: 1023px) {
-  .mobile-overlay {
-    height: 100vh;
-    display: block;
-    transition: all 0.7s;
-  }
-  .mobile-overlay.mobile-detection-height {
-    height: calc(100vh - 70px);
-  }
-  .mobile-overlay.active {
-    transition: all 0.7s;
-    top: 105px;
   }
 }
 
@@ -319,12 +296,6 @@ body {
     height: calc(100vh - 70px);
   }
 }
-@media screen and (min-width: 1024px) {
-  .hero-section {
-    background-color: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 250px 10px #1a1a1a inset;
-  }
-}
 .hero-section .container {
   height: 100vh;
 }
@@ -408,14 +379,14 @@ body {
 }
 .hero-section .container .navigation-arrow .navigation-arrow-wrapper .fa-angle-down.wave {
   padding-top: 5px;
-  color: lightblue;
+  color: #999999;
 }
 
 .builds-section {
-  height: 1000px;
+  height: 600px;
   width: 100%;
   padding-top: 40px;
-  background-color: #999999;
+  background-color: #003333;
 }
 .builds-section h3 {
   margin-top: 0px;
@@ -423,10 +394,10 @@ body {
 }
 
 .contact-section {
-  height: 1000px;
+  height: 600px;
   width: 100%;
   padding-top: 40px;
-  background-color: #666666;
+  background-color: #669999;
 }
 .contact-section h3 {
   margin-top: 0px;
@@ -437,7 +408,7 @@ footer {
   height: 200px;
   width: 100%;
   padding-top: 40px;
-  background-color: #336699;
+  background-color: #999999;
 }
 footer h3 {
   margin-top: 0px;
