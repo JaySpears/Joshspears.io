@@ -284,9 +284,7 @@ body {
 .hero-section {
   height: 100vh;
   width: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-color: #fcb415;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section {
@@ -296,6 +294,212 @@ body {
     height: calc(100vh - 70px);
   }
 }
+.hero-section .moon-sun {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  transform-origin: 50% 50%;
+  -webkit-animation: horizon 60s infinite;
+  /* Safari 4+ */
+  -moz-animation: horizon 60s infinite;
+  /* Fx 5+ */
+  -o-animation: horizon 60s infinite;
+  /* Opera 12+ */
+  animation: horizon 60s infinite;
+  animation-timing-function: linear;
+}
+.hero-section .moon-sun .moon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 110px;
+  margin: 0 auto;
+  bottom: 0;
+}
+.hero-section .moon-sun .sun {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 120px;
+}
+.hero-section .island-animation-wrapper {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.hero-section .island-animation-wrapper .cloud-one {
+  height: 5%;
+  position: absolute;
+  top: 10%;
+  -webkit-animation: fromLeft 80s infinite;
+  /* Safari 4+ */
+  -moz-animation: fromLeft 80s infinite;
+  /* Fx 5+ */
+  -o-animation: fromLeft 80s infinite;
+  /* Opera 12+ */
+  animation: fromLeft 80s infinite;
+  animation-timing-function: linear;
+}
+.hero-section .island-animation-wrapper .cloud-two {
+  height: 5%;
+  position: absolute;
+  top: 30%;
+  -webkit-animation: fromRight 60s infinite;
+  /* Safari 4+ */
+  -moz-animation: fromRight 60s infinite;
+  /* Fx 5+ */
+  -o-animation: fromRight 60s infinite;
+  /* Opera 12+ */
+  animation: fromRight 60s infinite;
+  animation-timing-function: linear;
+}
+.hero-section .island-animation-wrapper .island-wrapper {
+  height: 203px;
+  position: absolute;
+  margin: 0 auto;
+  width: auto;
+  left: 0;
+  right: 0;
+}
+@-webkit-keyframes fromLeft {
+  0% {
+    left: -12%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-webkit-keyframes fromRight {
+  0% {
+    right: -8%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+.hero-section .island-animation-wrapper .lighthouse-rays-left {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  left: 0;
+  right: 543px;
+  margin: 22px auto;
+  z-index: 30;
+  border-radius: 20px;
+  border-width: 20px 0 20px 150px;
+  -webkit-animation: rotatingRight 8s infinite;
+  /* Safari 4+ */
+  -moz-animation: rotatingRight 8s infinite;
+  /* Fx 5+ */
+  -o-animation: rotatingRight 8s infinite;
+  /* Opera 12+ */
+  animation: rotatingRight 8s infinite;
+  animation-timing-function: linear;
+}
+.hero-section .island-animation-wrapper .lighthouse-rays-right {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  left: 0;
+  right: 243px;
+  margin: 22px auto;
+  z-index: 30;
+  border-radius: 20px;
+  border-width: 20px 150px 20px 0px;
+  -webkit-animation: rotatingLeft 8s infinite;
+  /* Safari 4+ */
+  -moz-animation: rotatingLeft 8s infinite;
+  /* Fx 5+ */
+  -o-animation: rotatingLeft 8s infinite;
+  /* Opera 12+ */
+  animation: rotatingLeft 8s infinite;
+  animation-timing-function: linear;
+}
+@-webkit-keyframes rotatingRight {
+  from {
+    transform: rotateY(0deg);
+    transform-origin: right;
+    z-index: 20;
+  }
+  to {
+    transform: rotateY(360deg);
+    transform-origin: right;
+    z-index: 0;
+  }
+  0% {
+    border-color: transparent transparent transparent #f5d489;
+  }
+  25% {
+    border-color: transparent transparent transparent #f5f0e5;
+  }
+  50% {
+    border-color: transparent transparent transparent #f5d489;
+  }
+  75% {
+    border-color: transparent transparent transparent #f6bf46;
+  }
+  100% {
+    border-color: transparent transparent transparent #f5d489;
+  }
+}
+@-webkit-keyframes rotatingLeft {
+  from {
+    transform: rotateY(0deg);
+    transform-origin: left;
+    z-index: 2;
+  }
+  to {
+    transform: rotateY(360deg);
+    transform-origin: left;
+    z-index: 20;
+  }
+  0% {
+    border-color: transparent #f5d489 transparent transparent;
+  }
+  25% {
+    border-color: transparent #f6bf46 transparent transparent;
+  }
+  50% {
+    border-color: transparent #f5d489 transparent transparent;
+  }
+  75% {
+    border-color: transparent #f5f0e5 transparent transparent;
+  }
+  100% {
+    border-color: transparent #f5d489 transparent transparent;
+  }
+}
+.hero-section .island-animation-wrapper .island {
+  z-index: 10;
+  height: auto;
+  position: absolute;
+  margin: 0 auto;
+  bottom: 0;
+  width: 550px;
+  left: 0;
+  right: 0;
+}
+.hero-section .island-animation-wrapper .wave-one,
+.hero-section .island-animation-wrapper .wave-two,
+.hero-section .island-animation-wrapper .wave-three {
+  position: absolute;
+  width: 100%;
+  height: 15%;
+}
+.hero-section .island-animation-wrapper .wave-one {
+  background-color: #20b1ba;
+}
+.hero-section .island-animation-wrapper .wave-two {
+  background-color: #1a979f;
+}
+.hero-section .island-animation-wrapper .wave-three {
+  bottom: 0;
+  background-color: #17828f;
+}
 .hero-section .container {
   height: 100vh;
 }
@@ -303,10 +507,10 @@ body {
   text-align: center;
 }
 .hero-section .container .hero-intro {
-  display: none;
-  height: 55vh;
+  height: 71.5vh;
   position: relative;
   text-align: center;
+  z-index: 20;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section .container .hero-intro {
@@ -336,6 +540,9 @@ body {
   .hero-section .container .hero-intro h4 {
     font-size: 16px;
   }
+}
+.hero-section .container .typed-cursor {
+  display: none;
 }
 .hero-section .container .navigation-arrow {
   text-align: center;

@@ -1,6 +1,29 @@
 'use strict';
 $(function () {
 
+    function oceanImagesHeight(){
+        var waveOne = $('.wave-one');
+        var waveTwo = $('.wave-two');
+        var waveThree = $('.wave-three');
+        var island = $('.island');
+        var lighthouseRays = $('.rays');
+
+        var allWavesHeight = $(waveThree).height() * 3;
+        var windowHeight = $(window).height();
+        var islandWrapper = $('.island-wrapper');
+
+        $(waveTwo).css('bottom', $(waveThree).height());
+        $(waveOne).css('bottom', $(waveThree).height() * 2);
+        $(islandWrapper).css('bottom', allWavesHeight);
+    }
+
+    oceanImagesHeight();
+
+    $(window).on('resize', function(){
+            oceanImagesHeight();
+
+    })
+
     setInterval(function () {
         $('.fa-angle-down').toggleClass('wave');
     }, 800);
@@ -84,8 +107,51 @@ $(function () {
         }, 1800, 'easeInOutExpo');
     });
 
-    setTimeout(function(){
-        $('.hero-intro').fadeIn(1500);
-    }, 300);
+    // setTimeout(function(){
+    //     displayHeader();
+    // }, 300);
+    //
+    // function displayHeader(){
+    //     $(".hero-intro > h1").typed({
+    //         strings: ["Hello, I'm Josh!"],
+    //         typeSpeed: 30
+    //     });
+    // }
 
+    function setHorizonStyles(){
+        var viewportRatio = ($(window).width() / $(window).height()) * 100;
+        var gutterWidth = (viewportRatio - 100) / 2;
+        $("<style>\
+            @-webkit-keyframes horizon {\
+                0% {\
+                    transform: rotate(-90deg);\
+                    height:" + viewportRatio + "%;\
+                    top: " + gutterWidth * -1 + "%;\
+                }\
+                25% {\
+                    height: 100%;\
+                    top: 0;\
+                }\
+                50% {\
+                    height:" + viewportRatio + "%;\
+                    top: " + gutterWidth * -1 + "%;\
+                }\
+                75% {\
+                    height: 100%;\
+                    top: 0;\
+                }\
+                100% {\
+                    height:" + viewportRatio + "%;\
+                    transform: rotate(270deg);\
+                    top: " + gutterWidth * -1 + "%;\
+                }\
+            }\
+        </style>").appendTo('head');
+    }
+
+    setHorizonStyles();
+
+    $(window).on('resize', function(){
+        setHorizonStyles();
+    });
 });
