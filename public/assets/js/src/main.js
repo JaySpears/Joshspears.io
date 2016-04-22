@@ -1,29 +1,6 @@
 'use strict';
 $(function () {
 
-    function oceanImagesHeight(){
-        var waveOne = $('.wave-one');
-        var waveTwo = $('.wave-two');
-        var waveThree = $('.wave-three');
-        var island = $('.island');
-        var lighthouseRays = $('.rays');
-
-        var allWavesHeight = $(waveThree).height() * 3;
-        var windowHeight = $(window).height();
-        var islandWrapper = $('.island-wrapper');
-
-        $(waveTwo).css('bottom', $(waveThree).height());
-        $(waveOne).css('bottom', $(waveThree).height() * 2);
-        $(islandWrapper).css('bottom', allWavesHeight);
-    }
-
-    oceanImagesHeight();
-
-    $(window).on('resize', function(){
-            oceanImagesHeight();
-
-    })
-
     setInterval(function () {
         $('.fa-angle-down').toggleClass('wave');
     }, 800);
@@ -81,8 +58,6 @@ $(function () {
         }
     });
 
-
-
     $('.menu-item').each(function(key, value){
         var currentAnchor = $(value).parent();
         var currentAnchorHref = $(value).parent().attr('href');
@@ -107,29 +82,46 @@ $(function () {
         }, 1800, 'easeInOutExpo');
     });
 
-    // setTimeout(function(){
-    //     displayHeader();
-    // }, 300);
-    //
-    // function displayHeader(){
-    //     $(".hero-intro > h1").typed({
-    //         strings: ["Hello, I'm Josh!"],
-    //         typeSpeed: 30
-    //     });
-    // }
+    // HERO ANIMATION
+    function oceanImagesHeight(){
+        var waveOne = $('.wave-one');
+        var waveTwo = $('.wave-two');
+        var waveThree = $('.wave-three');
+        var island = $('.island');
+        var lighthouseRays = $('.rays');
 
-    var viewportWidth = $(window).width();
-    var viewportHeight = $(window).height()
-    var solarSystemWrapper = $('.moon-sun');
-    if (viewportHeight > viewportWidth) {
-        $(solarSystemWrapper).css({
-            'height': viewportWidth,
-            'width': viewportWidth
-        })
-    } else {
-        $(solarSystemWrapper).css({
-            'height': '115%',
-            'width': viewportHeight + 100
-        })
+        var allWavesHeight = $(waveThree).height() * 3;
+        var windowHeight = $(window).height();
+        var islandWrapper = $('.island-wrapper');
+
+        $(waveTwo).css('bottom', $(waveThree).height());
+        $(waveOne).css('bottom', $(waveThree).height() * 2);
+        $(islandWrapper).css('bottom', allWavesHeight);
     }
+
+    function rotateSolarSystem(){
+        var viewportWidth = $(window).width();
+        var viewportHeight = $(window).height()
+        var solarSystemWrapper = $('.moon-sun');
+        if (viewportHeight > viewportWidth) {
+            $(solarSystemWrapper).css({
+                'height': viewportWidth,
+                'width': viewportWidth
+            })
+        } else {
+            $(solarSystemWrapper).css({
+                'height': '115%',
+                'width': viewportHeight + 100
+            })
+        }
+    }
+
+    oceanImagesHeight();
+    rotateSolarSystem();
+    
+    $(window).on('resize', function(){
+        oceanImagesHeight();
+        rotateSolarSystem();
+    })
+
 });
