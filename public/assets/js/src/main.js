@@ -10,7 +10,7 @@ $(function () {
 
     if ($(window).width() >= 1024) {
 
-        $('.parallax-window').data('image-src', 'public/assets/img/hero.png');
+        $('.parallax-window').data('image-src', 'public/assets/img/hero-min.png');
         $('.navigation-list').on('click', function(){
             setTimeout(function(){
                 $('.menu-item').toggleClass('no-transition');
@@ -28,7 +28,7 @@ $(function () {
                 $('.navigation').removeClass('active');
             }
         });
-        $('.parallax-window').data('image-src', 'public/assets/img/hero-mobile.png');
+        $('.parallax-window').data('image-src', 'public/assets/img/hero-mobile-min.png');
         $('.navigation-list > ul').on('click', function(){
             $('.navigation-list, .menu-item, i, .nav-header, .mobile-seperator').toggleClass('active');
         });
@@ -99,29 +99,64 @@ $(function () {
         $(islandWrapper).css('bottom', allWavesHeight);
     }
 
-    function rotateSolarSystem(){
+    function setSolarSystem(){
         var viewportWidth = $(window).width();
-        var viewportHeight = $(window).height()
+        var viewportHeight = $(window).height();
+        var waveOne = $('.wave-one');
+        var waveTwo = $('.wave-two');
+        var waveThree = $('.wave-three');
+        var allWavesHeight = $(waveThree).height() * 3;
         var solarSystemWrapper = $('.moon-sun');
-        if (viewportHeight > viewportWidth) {
-            $(solarSystemWrapper).css({
-                'height': viewportWidth,
-                'width': viewportWidth
-            })
-        } else {
-            $(solarSystemWrapper).css({
-                'height': '115%',
-                'width': viewportHeight + 100
-            })
-        }
+        var solarSystemHeight = viewportHeight - allWavesHeight;
+
+        $(solarSystemWrapper).css('height', solarSystemHeight);
+
     }
 
+    setSolarSystem();
+
+    function starryNight(){
+        var waveOne = $('.wave-one');
+        var waveTwo = $('.wave-two');
+        var waveThree = $('.wave-three');
+        var allWavesHeight = $(waveThree).height() * 3;
+        var starryNight = $('.starry-night');
+        var starryNightHeight = $(window).height() - allWavesHeight;
+        var starryNightWidth = $(starryNight).width();
+
+        function getRandomheight(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        function getRandomWidth(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        for (var i = 300; i > 1; i--) {
+            $('.starry-night').append($('<p>.</p>'));
+        }
+
+        $('.starry-night > p').each(function(key, value){
+            var randomHeight = getRandomheight(0, starryNightHeight);
+            var randomWidth = getRandomWidth(0, starryNightWidth);
+            var min = 3;
+            var max = 9;
+            var randomOpacityTiming = Math.floor(Math.random() * (max - min + 1)) + min;
+            var opacityAnimation = 'starFade ' + randomOpacityTiming + 's infinite';
+            $(value).css('top', randomHeight);
+            $(value).css('left', randomWidth);
+            $(value).css('animation', opacityAnimation);
+        });
+
+        $(starryNight).css('height', starryNightHeight);
+        console.log(starryNightHeight);
+
+    }
+    starryNight();
     oceanImagesHeight();
-    rotateSolarSystem();
-    
+
+
     $(window).on('resize', function(){
         oceanImagesHeight();
-        rotateSolarSystem();
     })
 
 });
