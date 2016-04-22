@@ -118,40 +118,18 @@ $(function () {
     //     });
     // }
 
-    function setHorizonStyles(){
-        var viewportRatio = ($(window).width() / $(window).height()) * 100;
-        var gutterWidth = (viewportRatio - 100) / 2;
-        $("<style>\
-            @-webkit-keyframes horizon {\
-                0% {\
-                    transform: rotate(-90deg);\
-                    height:" + viewportRatio + "%;\
-                    top: " + gutterWidth * -1 + "%;\
-                }\
-                25% {\
-                    height: 100%;\
-                    top: 0;\
-                }\
-                50% {\
-                    height:" + viewportRatio + "%;\
-                    top: " + gutterWidth * -1 + "%;\
-                }\
-                75% {\
-                    height: 100%;\
-                    top: 0;\
-                }\
-                100% {\
-                    height:" + viewportRatio + "%;\
-                    transform: rotate(270deg);\
-                    top: " + gutterWidth * -1 + "%;\
-                }\
-            }\
-        </style>").appendTo('head');
+    var viewportWidth = $(window).width();
+    var viewportHeight = $(window).height()
+    var solarSystemWrapper = $('.moon-sun');
+    if (viewportHeight > viewportWidth) {
+        $(solarSystemWrapper).css({
+            'height': viewportWidth,
+            'width': viewportWidth
+        })
+    } else {
+        $(solarSystemWrapper).css({
+            'height': '115%',
+            'width': viewportHeight + 100
+        })
     }
-
-    setHorizonStyles();
-
-    $(window).on('resize', function(){
-        setHorizonStyles();
-    });
 });

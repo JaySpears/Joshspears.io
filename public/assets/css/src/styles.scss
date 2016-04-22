@@ -270,17 +270,54 @@ body{
 .hero-section{
     height: 100vh;
     width: 100%;
-    background-color: #fcb415;
+    -webkit-animation: sky 60s infinite; /* Safari 4+ */
+    -moz-animation:    sky 60s infinite; /* Fx 5+ */
+    -o-animation:      sky 60s infinite; /* Opera 12+ */
+    animation:         sky 60s infinite;
+    animation-timing-function: linear;
     @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
         height: 100vh;
         &.mobile-detection-height{
             height: calc(100vh - 70px);
         }
     }
+    @-webkit-keyframes horizon {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    @-webkit-keyframes sky {
+        0% {
+            background-color: #5D6C80;
+        }
+        6% {
+            background-color: #BAD7FF;
+        }
+        44% {
+            background-color: #BAD7FF;
+        }
+        50% {
+            background-color: #5D6C80;
+        }
+        56%{
+            background-color: #000000;
+        }
+        94%{
+            background-color: #000000;
+        }
+        100% {
+            background-color: #5D6C80;
+        }
+    }
     .moon-sun{
         position: absolute;
         z-index: 0;
-        width: 100%;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
          transform-origin:50% 50%;
         -webkit-animation: horizon 60s infinite; /* Safari 4+ */
         -moz-animation:    horizon 60s infinite; /* Fx 5+ */
@@ -289,19 +326,19 @@ body{
         animation-timing-function: linear;
         .moon{
             position: absolute;
-            left: 0;
             right: 0;
-            width: 110px;
-            margin: 0 auto;
+            top: 0;
+            width: 70px;
+            margin: auto 0;
             bottom: 0;
         }
         .sun{
             position: absolute;
-            right: 0;
-            top: 0;
             left: 0;
-            margin: 0 auto;
-            width: 120px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            width: 80px;
         }
     }
     .island-animation-wrapper{
@@ -309,7 +346,7 @@ body{
         position: absolute;
         width: 100%;
         .cloud-one{
-            height: 5%;
+            height: 3.5%;
             position: absolute;
             top: 10%;
             -webkit-animation: fromLeft 80s infinite; /* Safari 4+ */
@@ -319,7 +356,7 @@ body{
             animation-timing-function: linear;
         }
         .cloud-two{
-            height: 5%;
+            height: 3.5%;
             position: absolute;
             top: 30%;
             -webkit-animation: fromRight 60s infinite; /* Safari 4+ */
@@ -332,13 +369,23 @@ body{
             height: 203px;
             position: absolute;
             margin: 0 auto;
-            width: auto;
-            left: 0;
-            right: 0;
+            width: 100%;
         }
         @-webkit-keyframes fromLeft {
             0% {
                 left: -12%;
+            }
+            32%{
+                opacity: 1;
+            }
+            37%{
+                opacity: 0.2;
+            }
+            74%{
+                opacity: 0.2;
+            }
+            79%{
+                opacity: 1;
             }
             100% {
                 left: 100%;
@@ -349,7 +396,17 @@ body{
             0% {
                 right: -8%;
             }
+            44%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0.2;
+            }
+            96%{
+                opacity: 0.2;
+            }
             100% {
+                opacity: 1;
                 right: 100%;
             }
         }
@@ -358,12 +415,12 @@ body{
             width: 0;
             height: 0;
             border-style: solid;
-            left: 0;
-            right: 543px;
-            margin: 22px auto;
+            right: 229px;
+            margin: 44.5px auto;
             z-index: 30;
             border-radius: 20px;
-            border-width: 20px 0 20px 150px;
+            border-width: 12px 0 12px 120px;
+            border-color: transparent transparent transparent #FFFFFF;
             -webkit-animation: rotatingRight 8s infinite; /* Safari 4+ */
             -moz-animation:    rotatingRight 8s infinite; /* Fx 5+ */
             -o-animation:      rotatingRight 8s infinite; /* Opera 12+ */
@@ -375,12 +432,12 @@ body{
             width: 0;
             height: 0;
             border-style: solid;
-            left: 0;
-            right: 243px;
-            margin: 22px auto;
+            right: 106px;
+            margin: 44.5px auto;
             z-index: 30;
             border-radius: 20px;
-            border-width: 20px 150px 20px 0px;
+            border-width: 12px 120px 12px 0;
+            border-color: transparent #ffffff transparent transparent;
             -webkit-animation: rotatingLeft 8s infinite; /* Safari 4+ */
             -moz-animation:    rotatingLeft 8s infinite; /* Fx 5+ */
             -o-animation:      rotatingLeft 8s infinite; /* Opera 12+ */
@@ -400,19 +457,20 @@ body{
             }
 
             0%{
-                border-color: transparent transparent transparent #f5d489;
+                opacity: 0.5;
             }
             25%{
-                border-color: transparent transparent transparent #f5f0e5;
+                opacity: 0.9;
+
             }
             50%{
-                border-color: transparent transparent transparent #f5d489;
+                opacity: 0.5;
             }
             75%{
-                border-color: transparent transparent transparent #f6bf46;
+                opacity: 0.1;
             }
             100%{
-                border-color: transparent transparent transparent #f5d489;
+                opacity: 0.5;
             }
         }
         @-webkit-keyframes rotatingLeft {
@@ -426,20 +484,22 @@ body{
                 transform-origin: left;
                 z-index: 20;
             }
+
             0%{
-                border-color: transparent #f5d489 transparent transparent;
+                opacity: 0.5;
             }
             25%{
-                border-color: transparent #f6bf46 transparent transparent;
+                opacity: 0.1;
+
             }
             50%{
-                border-color: transparent #f5d489 transparent transparent;
+                opacity: 0.5;
             }
             75%{
-                border-color: transparent #f5f0e5 transparent transparent;
+                opacity: 0.9;
             }
             100%{
-                border-color: transparent #f5d489 transparent transparent;
+                opacity: 0.5;
             }
         }
         .island{
@@ -448,9 +508,8 @@ body{
             position: absolute;
             margin: 0 auto;
             bottom: 0;
-            width: 550px;
-            left: 0;
-            right: 0;
+            width: 340px;
+            right: -40px;
         }
         .wave-one,
         .wave-two,
