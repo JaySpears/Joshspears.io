@@ -1,6 +1,7 @@
 'use strict';
 $(function () {
 
+    var viewportWidth = $(window).width();
     var nav = $('#navigation');
     var heroSection = $('.hero-section');
 
@@ -127,10 +128,6 @@ $(function () {
             return Math.floor(Math.random() * (max - min)) + min;
         }
 
-        for (var i = 150; i > 1; i--) {
-            $('.starry-night').append($('<p>.</p>'));
-        }
-
         $('.starry-night > p').each(function(key, value){
             var randomHeight = getRandomheight(0, starryNightHeight);
             var randomWidth = getRandomWidth(0, starryNightWidth);
@@ -146,14 +143,32 @@ $(function () {
         $(starryNight).css('height', starryNightHeight);
     }
 
+    function starCount(device){
+        if (device >= 1024) {
+            for (var i = 150; i > 1; i--) {
+                $('.starry-night').append($('<p>.</p>'));
+            }
+        } else if (device <= 1023 && device >= 768){
+            for (var i = 70; i > 1; i--) {
+                $('.starry-night').append($('<p>.</p>'));
+            }
+        } else {
+            for (var i = 20; i > 1; i--) {
+                $('.starry-night').append($('<p>.</p>'));
+            }
+        }
+    }
+
     oceanImagesHeight();
     setSolarSystem();
     starryNight();
+    starCount(viewportWidth);
 
     $(window).on('resize', function(){
         oceanImagesHeight();
         setSolarSystem();
         starryNight();
+        starCount(viewportWidth);
     })
 
 });
