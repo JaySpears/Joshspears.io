@@ -1,3 +1,206 @@
+@-webkit-keyframes fromLeft {
+  0% {
+    left: -8%;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  46% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  96% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    left: 100%;
+  }
+}
+@-webkit-keyframes fromRight {
+  0% {
+    right: -8%;
+  }
+  44% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  96% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    right: 100%;
+  }
+}
+@-webkit-keyframes sky {
+  0% {
+    background-color: #5D6C80;
+  }
+  7% {
+    background-color: #BAD7FF;
+  }
+  46% {
+    background-color: #BAD7FF;
+  }
+  47.5% {
+    background-color: #222222;
+  }
+  98.5% {
+    background-color: #222222;
+  }
+  100% {
+    background-color: #5D6C80;
+  }
+}
+@-webkit-keyframes starFade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes starryNight {
+  0% {
+    opacity: 0;
+  }
+  47% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes sun {
+  0% {
+    transform: rotate(0deg);
+    bottom: -120px;
+  }
+  12.5% {
+    bottom: 72.5%;
+  }
+  38.5% {
+    bottom: 72.5%;
+  }
+  50% {
+    transform: rotate(360deg);
+    bottom: -120px;
+  }
+  100% {
+    bottom: -120px;
+  }
+}
+@-webkit-keyframes moon {
+  0% {
+    bottom: -120px;
+  }
+  45% {
+    bottom: -120px;
+  }
+  57.7% {
+    bottom: 70%;
+  }
+  87.5% {
+    bottom: 70%;
+  }
+  100% {
+    bottom: -90px;
+  }
+}
+@-webkit-keyframes rotatingRight {
+  from {
+    transform: rotateY(0deg);
+    transform-origin: right;
+    z-index: 20;
+  }
+  to {
+    transform: rotateY(360deg);
+    transform-origin: right;
+    z-index: 0;
+  }
+  0% {
+    opacity: 0.5;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@-webkit-keyframes rotatingLeft {
+  from {
+    transform: rotateY(0deg);
+    transform-origin: left;
+    z-index: 2;
+  }
+  to {
+    transform: rotateY(360deg);
+    transform-origin: left;
+    z-index: 20;
+  }
+  0% {
+    opacity: 0.5;
+  }
+  25% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@-webkit-keyframes horizonBlur {
+  0% {
+    box-shadow: inset 0 60px 60px -60px rgba(0, 0, 0, 0.8);
+  }
+  8% {
+    box-shadow: inset 0 60px 60px -60px rgba(255, 255, 255, 0.8);
+  }
+  42% {
+    box-shadow: inset 0 60px 60px -60px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow: inset 0 60px 60px -60px rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    box-shadow: inset 0 60px 60px -60px rgba(0, 0, 0, 0.8);
+  }
+}
 .clearfix {
   display: table;
   content: '';
@@ -302,26 +505,6 @@ body {
     height: calc(100vh - 70px);
   }
 }
-@-webkit-keyframes sky {
-  0% {
-    background-color: #5D6C80;
-  }
-  7% {
-    background-color: #BAD7FF;
-  }
-  46% {
-    background-color: #BAD7FF;
-  }
-  49% {
-    background-color: #222222;
-  }
-  97% {
-    background-color: #222222;
-  }
-  100% {
-    background-color: #5D6C80;
-  }
-}
 .hero-section .starry-night {
   position: absolute;
   z-index: 1;
@@ -339,76 +522,12 @@ body {
   animation-timing-function: linear;
   position: absolute;
 }
-@-webkit-keyframes starFade {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes starryNight {
-  0% {
-    opacity: 0;
-  }
-  47% {
-    opacity: 0;
-  }
-  55% {
-    opacity: 1;
-  }
-  94% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 .hero-section .moon-sun {
   position: absolute;
   z-index: 0;
   top: 0;
   width: 100%;
   transform-origin: 50% 50%;
-}
-@-webkit-keyframes sun {
-  0% {
-    transform: rotate(0deg);
-    bottom: -120px;
-  }
-  12.5% {
-    bottom: 72.5%;
-  }
-  38.5% {
-    bottom: 72.5%;
-  }
-  50% {
-    transform: rotate(360deg);
-    bottom: -120px;
-  }
-  100% {
-    bottom: -120px;
-  }
-}
-@-webkit-keyframes moon {
-  0% {
-    bottom: -120px;
-  }
-  45% {
-    bottom: -120px;
-  }
-  57.7% {
-    bottom: 70%;
-  }
-  87.5% {
-    bottom: 70%;
-  }
-  100% {
-    bottom: -90px;
-  }
 }
 .hero-section .moon-sun .moon {
   position: absolute;
@@ -423,22 +542,6 @@ body {
   -o-animation: moon 60s infinite;
   /* Opera 12+ */
   animation: moon 60s infinite;
-  animation-timing-function: ease-in-out;
-}
-.hero-section .moon-sun .sun-rays {
-  position: absolute;
-  left: 5%;
-  width: 80px;
-  border-radius: 100%;
-  background-color: rgba(255, 255, 175, 0.3);
-  box-shadow: 0px 0px 100px 10px rgba(255, 255, 175, 0.6);
-  -webkit-animation: sun 60s infinite;
-  /* Safari 4+ */
-  -moz-animation: sun 60s infinite;
-  /* Fx 5+ */
-  -o-animation: sun 60s infinite;
-  /* Opera 12+ */
-  animation: sun 60s infinite;
   animation-timing-function: ease-in-out;
 }
 .hero-section .moon-sun .sun {
@@ -495,54 +598,6 @@ body {
   margin: 0 auto;
   width: 100%;
 }
-@-webkit-keyframes fromLeft {
-  0% {
-    left: -8%;
-  }
-  20% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 0.2;
-  }
-  46% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0.2;
-  }
-  96% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-    left: 100%;
-  }
-}
-@-webkit-keyframes fromRight {
-  0% {
-    right: -8%;
-  }
-  44% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  96% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 1;
-    right: 100%;
-  }
-}
 .hero-section .island-animation-wrapper .lighthouse-rays-left {
   position: absolute;
   width: 0;
@@ -583,60 +638,6 @@ body {
   animation: rotatingLeft 8s infinite;
   animation-timing-function: linear;
 }
-@-webkit-keyframes rotatingRight {
-  from {
-    transform: rotateY(0deg);
-    transform-origin: right;
-    z-index: 20;
-  }
-  to {
-    transform: rotateY(360deg);
-    transform-origin: right;
-    z-index: 0;
-  }
-  0% {
-    opacity: 0.5;
-  }
-  25% {
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  75% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@-webkit-keyframes rotatingLeft {
-  from {
-    transform: rotateY(0deg);
-    transform-origin: left;
-    z-index: 2;
-  }
-  to {
-    transform: rotateY(360deg);
-    transform-origin: left;
-    z-index: 20;
-  }
-  0% {
-    opacity: 0.5;
-  }
-  25% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  75% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
 .hero-section .island-animation-wrapper .island {
   z-index: 10;
   height: auto;
@@ -653,23 +654,6 @@ body {
   width: 100%;
   height: 15%;
   z-index: 100;
-}
-@-webkit-keyframes horizonBlur {
-  0% {
-    box-shadow: inset 0 60px 60px -60px rgba(0, 0, 0, 0.8);
-  }
-  8% {
-    box-shadow: inset 0 60px 60px -60px rgba(255, 255, 255, 0.8);
-  }
-  42% {
-    box-shadow: inset 0 60px 60px -60px rgba(255, 255, 255, 0.8);
-  }
-  50% {
-    box-shadow: inset 0 60px 60px -60px rgba(0, 0, 0, 0.8);
-  }
-  100% {
-    box-shadow: inset 0 60px 60px -60px rgba(0, 0, 0, 0.8);
-  }
 }
 .hero-section .island-animation-wrapper .wave-one {
   -webkit-animation: horizonBlur 60s infinite;

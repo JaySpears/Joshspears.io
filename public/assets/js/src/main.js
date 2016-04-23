@@ -1,21 +1,19 @@
 'use strict';
 $(function () {
 
+    var nav = $('#navigation');
+    var heroSection = $('.hero-section');
+
     setInterval(function () {
         $('.fa-angle-down').toggleClass('wave');
     }, 800);
 
-    var nav = $('#navigation');
-    var heroSection = $('.hero-section');
-
     if ($(window).width() >= 1024) {
-
         $('.parallax-window').data('image-src', 'public/assets/img/hero-min.png');
         $('.navigation-list').on('click', function(){
             setTimeout(function(){
                 $('.menu-item').toggleClass('no-transition');
             });
-
             $('body, .navigation-list, .plus, .menu-item, i, .navigation').toggleClass('active');
         });
     }
@@ -111,10 +109,7 @@ $(function () {
         var solarSystemHeight = viewportHeight - allWavesHeight;
 
         $(solarSystemWrapper).css('height', solarSystemHeight);
-
     }
-
-    setSolarSystem();
 
     function starryNight(){
         var waveOne = $('.wave-one');
@@ -149,15 +144,16 @@ $(function () {
         });
 
         $(starryNight).css('height', starryNightHeight);
-        console.log(starryNightHeight);
-
     }
-    starryNight();
-    oceanImagesHeight();
 
+    oceanImagesHeight();
+    setSolarSystem();
+    starryNight();
 
     $(window).on('resize', function(){
         oceanImagesHeight();
+        setSolarSystem();
+        starryNight();
     })
 
 });
