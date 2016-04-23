@@ -97,6 +97,7 @@ $(function () {
         $(waveTwo).css('bottom', $(waveThree).height());
         $(waveOne).css('bottom', $(waveThree).height() * 2);
         $(islandWrapper).css('bottom', allWavesHeight);
+        $('.hero-intro').css('bottom', allWavesHeight);
     }
 
     function setSolarSystem(){
@@ -131,15 +132,15 @@ $(function () {
             return Math.floor(Math.random() * (max - min)) + min;
         }
 
-        for (var i = 300; i > 1; i--) {
+        for (var i = 150; i > 1; i--) {
             $('.starry-night').append($('<p>.</p>'));
         }
 
         $('.starry-night > p').each(function(key, value){
             var randomHeight = getRandomheight(0, starryNightHeight);
             var randomWidth = getRandomWidth(0, starryNightWidth);
-            var min = 3;
-            var max = 9;
+            var min = 2;
+            var max = 7;
             var randomOpacityTiming = Math.floor(Math.random() * (max - min + 1)) + min;
             var opacityAnimation = 'starFade ' + randomOpacityTiming + 's infinite';
             $(value).css('top', randomHeight);

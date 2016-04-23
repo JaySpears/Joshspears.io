@@ -5,6 +5,7 @@
 }
 
 body {
+  overflow-x: hidden;
   background-color: #003333;
   font-family: "Raleway", sans-serif;
   color: white;
@@ -32,7 +33,7 @@ body {
 
 #navigation {
   top: 0;
-  z-index: 9;
+  z-index: 130;
 }
 @media screen and (min-width: 1024px) {
   #navigation {
@@ -305,19 +306,16 @@ body {
   0% {
     background-color: #5D6C80;
   }
-  8% {
+  7% {
     background-color: #BAD7FF;
   }
-  42% {
+  46% {
     background-color: #BAD7FF;
   }
-  50% {
-    background-color: #5D6C80;
-  }
-  51% {
+  49% {
     background-color: #222222;
   }
-  92% {
+  97% {
     background-color: #222222;
   }
   100% {
@@ -338,6 +336,7 @@ body {
   animation-timing-function: linear;
 }
 .hero-section .starry-night p {
+  animation-timing-function: linear;
   position: absolute;
 }
 @-webkit-keyframes starFade {
@@ -345,7 +344,7 @@ body {
     opacity: 1;
   }
   50% {
-    opacity: 0.2;
+    opacity: 0.1;
   }
   100% {
     opacity: 1;
@@ -377,15 +376,17 @@ body {
 }
 @-webkit-keyframes sun {
   0% {
+    transform: rotate(0deg);
     bottom: -120px;
   }
-  18% {
-    bottom: 70%;
+  12.5% {
+    bottom: 72.5%;
   }
-  25% {
-    bottom: 70%;
+  38.5% {
+    bottom: 72.5%;
   }
   50% {
+    transform: rotate(360deg);
     bottom: -120px;
   }
   100% {
@@ -394,15 +395,15 @@ body {
 }
 @-webkit-keyframes moon {
   0% {
-    bottom: -90px;
+    bottom: -120px;
   }
-  50% {
-    bottom: -90px;
+  45% {
+    bottom: -120px;
   }
-  68% {
+  57.7% {
     bottom: 70%;
   }
-  75% {
+  87.5% {
     bottom: 70%;
   }
   100% {
@@ -413,7 +414,7 @@ body {
   position: absolute;
   left: 5%;
   width: 70px;
-  box-shadow: 0px 0px 100px 10px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 40px 0px rgba(255, 255, 255, 0.6);
   border-radius: 100%;
   -webkit-animation: moon 60s infinite;
   /* Safari 4+ */
@@ -424,10 +425,27 @@ body {
   animation: moon 60s infinite;
   animation-timing-function: ease-in-out;
 }
-.hero-section .moon-sun .sun {
+.hero-section .moon-sun .sun-rays {
   position: absolute;
   left: 5%;
   width: 80px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 175, 0.3);
+  box-shadow: 0px 0px 100px 10px rgba(255, 255, 175, 0.6);
+  -webkit-animation: sun 60s infinite;
+  /* Safari 4+ */
+  -moz-animation: sun 60s infinite;
+  /* Fx 5+ */
+  -o-animation: sun 60s infinite;
+  /* Opera 12+ */
+  animation: sun 60s infinite;
+  animation-timing-function: ease-in-out;
+}
+.hero-section .moon-sun .sun {
+  position: absolute;
+  left: 5%;
+  margin-top: 55px;
+  width: 70px;
   border-radius: 100%;
   background-color: rgba(255, 255, 175, 0.3);
   box-shadow: 0px 0px 100px 10px rgba(255, 255, 175, 0.6);
@@ -446,20 +464,20 @@ body {
   width: 100%;
 }
 .hero-section .island-animation-wrapper .cloud-one {
-  height: 3.5%;
+  height: 3%;
   position: absolute;
-  top: 10%;
-  -webkit-animation: fromLeft 60s infinite;
+  top: 12%;
+  -webkit-animation: fromLeft 120s infinite;
   /* Safari 4+ */
-  -moz-animation: fromLeft 60s infinite;
+  -moz-animation: fromLeft 120s infinite;
   /* Fx 5+ */
-  -o-animation: fromLeft 60s infinite;
+  -o-animation: fromLeft 120s infinite;
   /* Opera 12+ */
-  animation: fromLeft 60s infinite;
+  animation: fromLeft 120s infinite;
   animation-timing-function: linear;
 }
 .hero-section .island-animation-wrapper .cloud-two {
-  height: 3.5%;
+  height: 3%;
   position: absolute;
   top: 30%;
   -webkit-animation: fromRight 60s infinite;
@@ -481,18 +499,30 @@ body {
   0% {
     left: -8%;
   }
-  44% {
+  20% {
     opacity: 1;
   }
+  25% {
+    opacity: 0.2;
+  }
+  46% {
+    opacity: 0.2;
+  }
   50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  75% {
     opacity: 0.2;
   }
   96% {
     opacity: 0.2;
   }
   100% {
-    left: 100%;
     opacity: 1;
+    left: 100%;
   }
 }
 @-webkit-keyframes fromRight {
@@ -624,7 +654,32 @@ body {
   height: 15%;
   z-index: 100;
 }
+@-webkit-keyframes horizonBlur {
+  0% {
+    box-shadow: inset 0 60px 60px -60px rgba(0, 0, 0, 0.8);
+  }
+  8% {
+    box-shadow: inset 0 60px 60px -60px rgba(255, 255, 255, 0.8);
+  }
+  42% {
+    box-shadow: inset 0 60px 60px -60px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow: inset 0 60px 60px -60px rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    box-shadow: inset 0 60px 60px -60px rgba(0, 0, 0, 0.8);
+  }
+}
 .hero-section .island-animation-wrapper .wave-one {
+  -webkit-animation: horizonBlur 60s infinite;
+  /* Safari 4+ */
+  -moz-animation: horizonBlur 60s infinite;
+  /* Fx 5+ */
+  -o-animation: horizonBlur 60s infinite;
+  /* Opera 12+ */
+  animation: horizonBlur 60s infinite;
+  animation-timing-function: linear;
   background-color: #20b1ba;
 }
 .hero-section .island-animation-wrapper .wave-two {
@@ -641,10 +696,10 @@ body {
   text-align: center;
 }
 .hero-section .container .hero-intro {
-  height: 71.5vh;
+  height: 100%;
   position: relative;
   text-align: center;
-  z-index: 20;
+  z-index: 120;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section .container .hero-intro {
@@ -654,7 +709,7 @@ body {
 .hero-section .container .hero-intro h1 {
   font-size: 42px;
   position: absolute;
-  bottom: 0;
+  bottom: 15%;
   left: 0;
   right: 0;
   color: white;
@@ -668,7 +723,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -20px;
+  bottom: 13%;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section .container .hero-intro h4 {
@@ -717,10 +772,11 @@ body {
   position: absolute;
   left: 0;
   right: 0;
+  z-index: 130;
 }
 .hero-section .container .navigation-arrow .navigation-arrow-wrapper .fa-angle-down.wave {
   padding-top: 5px;
-  color: #999999;
+  color: #669999;
 }
 
 .builds-section {
