@@ -86,6 +86,28 @@ $tertiary: #999999;
     }
 }
 
+@-webkit-keyframes sky-mobile {
+    0% {
+        background-color: #5D6C80;
+    }
+    7%{
+        background-color: #BAD7FF;
+    }
+    43%{
+        background-color: #BAD7FF;
+    }
+    46%{
+        background-color: #222222;
+    }
+    98.5%{
+        background-color: #222222;
+    }
+    100% {
+        background-color: #5D6C80;
+    }
+}
+
+
 @-webkit-keyframes starFade {
     0%{
         opacity: 1;
@@ -136,6 +158,27 @@ $tertiary: #999999;
     }
 }
 
+@-webkit-keyframes sun-mobile {
+    0% {
+        transform: rotate(0deg);
+        bottom: -120px;
+    }
+    12.5%{
+        bottom: 62.5%;
+    }
+    38.5%{
+        bottom: 62.5%;
+    }
+    50%{
+        transform: rotate(360deg);
+        bottom: -120px;
+    }
+    100%{
+        bottom: -120px;
+    }
+}
+
+
 @-webkit-keyframes moon {
     0%{
         bottom: -120px;
@@ -148,6 +191,24 @@ $tertiary: #999999;
     }
     87.5%{
         bottom: 70%;
+    }
+    100% {
+        bottom: -90px;
+    }
+}
+
+@-webkit-keyframes moon-mobile {
+    0%{
+        bottom: -120px;
+    }
+    45%{
+        bottom: -120px;
+    }
+    57.7%{
+        bottom: 61.5%;
+    }
+    87.5%{
+        bottom: 61.5%;
     }
     100% {
         bottom: -90px;
@@ -265,7 +326,7 @@ body{
 
 #navigation{
     top: 0;
-    z-index: 130;
+    z-index: 200;
     @media screen and (min-width: $desktop-min){
         right: 0;
         margin-top: 20px;
@@ -495,6 +556,11 @@ body{
     animation-timing-function: linear;
     @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
         height: 100vh;
+        -webkit-animation: sky-mobile 60s infinite; /* Safari 4+ */
+        -moz-animation:    sky-mobile 60s infinite; /* Fx 5+ */
+        -o-animation:      sky-mobile 60s infinite; /* Opera 12+ */
+        animation:         sky-mobile 60s infinite;
+        animation-timing-function: linear;
         &.mobile-detection-height{
             height: calc(100vh - 70px);
         }
@@ -508,6 +574,12 @@ body{
         -o-animation:      starryNight 60s infinite; /* Opera 12+ */
         animation:         starryNight 60s infinite;
         animation-timing-function: linear;
+        @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+            -webkit-animation: starryNight 60s infinite; /* Safari 4+ */
+            -moz-animation:    starryNight 60s infinite; /* Fx 5+ */
+            -o-animation:      starryNight 60s infinite; /* Opera 12+ */
+            animation:         starryNight 60s infinite;
+        }
         p{
             animation-timing-function: linear;
             position: absolute;
@@ -525,13 +597,21 @@ body{
             position: absolute;
             left: 5%;
             width: 70px;
-            box-shadow: 0 0 40px 0px rgba(255,255,255,.6);
+            box-shadow: 0 0 40px 0px rgba(255,255,255,1);
             border-radius: 100%;
             -webkit-animation: moon 60s infinite; /* Safari 4+ */
             -moz-animation:    moon 60s infinite; /* Fx 5+ */
             -o-animation:      moon 60s infinite; /* Opera 12+ */
             animation:         moon 60s infinite;
             animation-timing-function: ease-in-out;
+            @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+                width: 45px;
+                left: 6.5%;
+                -webkit-animation: moon-mobile 60s infinite; /* Safari 4+ */
+                -moz-animation:    moon-mobile 60s infinite; /* Fx 5+ */
+                -o-animation:      moon-mobile 60s infinite; /* Opera 12+ */
+                animation:         moon-mobile 60s infinite;
+            }
         }
         .sun{
             position: absolute;
@@ -546,12 +626,25 @@ body{
             -o-animation:      sun 60s infinite; /* Opera 12+ */
             animation:         sun 60s infinite;
             animation-timing-function: ease-in-out;
+            @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+                width: 50px;
+                left: 6.5%;
+                background-color: rgba(255,255,175,.3);
+                box-shadow: 0px 0px 100px 10px rgba(255,255,175,.8);
+                -webkit-animation: sun-mobile 60s infinite; /* Safari 4+ */
+                -moz-animation:    sun-mobile 60s infinite; /* Fx 5+ */
+                -o-animation:      sun-mobile 60s infinite; /* Opera 12+ */
+                animation:         sun-mobile 60s infinite;
+            }
         }
     }
     .island-animation-wrapper{
         height: 100%;
         position: absolute;
         width: 100%;
+        @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+            overflow: hidden !important;
+        }
         .cloud-one{
             height: 3%;
             position: absolute;
@@ -561,6 +654,9 @@ body{
             -o-animation:      fromLeft 120s infinite; /* Opera 12+ */
             animation:         fromLeft 120s infinite;
             animation-timing-function: linear;
+            @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+                top: 16%;
+            }
         }
         .cloud-two{
             height: 3%;
@@ -571,6 +667,9 @@ body{
             -o-animation:      fromRight 60s infinite; /* Opera 12+ */
             animation:         fromRight 60s infinite;
             animation-timing-function: linear;
+            @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+                top: 39%;
+            }
         }
         .island-wrapper{
             height: 203px;
@@ -591,12 +690,16 @@ body{
             z-index: 30;
             border-radius: 20px;
             border-width: 12px 0 12px 90px;
-            border-color: transparent transparent transparent #FFFF99;
+            border-color: transparent transparent transparent #ffffdc;
             -webkit-animation: rotatingRight 8s infinite; /* Safari 4+ */
             -moz-animation:    rotatingRight 8s infinite; /* Fx 5+ */
             -o-animation:      rotatingRight 8s infinite; /* Opera 12+ */
             animation:         rotatingRight 8s infinite;
             animation-timing-function: linear;
+            @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+                right: 101px;
+                margin: 62.5px auto;
+            }
         }
         .lighthouse-rays-right{
             position: absolute;
@@ -608,12 +711,17 @@ body{
             z-index: 30;
             border-radius: 20px;
             border-width: 12px 90px 12px 0;
-            border-color: transparent #FFFF99 transparent transparent;
+            border-color: transparent #ffffdc transparent transparent;
             -webkit-animation: rotatingLeft 8s infinite; /* Safari 4+ */
             -moz-animation:    rotatingLeft 8s infinite; /* Fx 5+ */
             -o-animation:      rotatingLeft 8s infinite; /* Opera 12+ */
             animation:         rotatingLeft 8s infinite;
             animation-timing-function: linear;
+            @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+                right: 13px;
+                margin: 62.5px auto;
+                overflow: hidden !important;
+            }
         }
 
         .island{
@@ -624,6 +732,23 @@ body{
             bottom: 0;
             width: 340px;
             right: -40px;
+            display: block;
+            @media screen and (max-width: $mobile-max){
+                display: none;
+            }
+        }
+        .island-mobile{
+            z-index: 10;
+            height: auto;
+            position: absolute;
+            margin: 0 auto;
+            bottom: 0;
+            width: 150px;
+            right: 15px;
+            display: none;
+            @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+                display: block;
+            }
         }
 
         .wave-one,

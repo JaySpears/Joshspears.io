@@ -153,7 +153,7 @@ $(function () {
                 $('.starry-night').append($('<p>.</p>'));
             }
         } else {
-            for (var i = 20; i > 1; i--) {
+            for (var i = 35; i > 1; i--) {
                 $('.starry-night').append($('<p>.</p>'));
             }
         }
@@ -161,14 +161,14 @@ $(function () {
 
     oceanImagesHeight();
     setSolarSystem();
-    starryNight();
     starCount(viewportWidth);
+    starryNight();
 
     $(window).on('resize', function(){
         oceanImagesHeight();
         setSolarSystem();
-        starryNight();
         starCount(viewportWidth);
+        starryNight();
     })
 
 });
