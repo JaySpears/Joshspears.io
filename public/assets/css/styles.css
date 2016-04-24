@@ -794,7 +794,7 @@ body {
   right: -40px;
   display: block;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .hero-section .island-animation-wrapper .island {
     display: none;
   }

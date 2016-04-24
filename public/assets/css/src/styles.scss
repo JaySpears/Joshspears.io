@@ -724,7 +724,7 @@ body{
             width: 340px;
             right: -40px;
             display: block;
-            @media screen and (max-width: $mobile-max){
+            @media screen and (max-width: $tablet-max){
                 display: none;
             }
         }
