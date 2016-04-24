@@ -216,17 +216,10 @@ $tertiary: #999999;
 }
 
 @-webkit-keyframes rotatingRight {
-    from {
-        transform: rotateY(0deg);
+    0%{
         transform-origin: right;
         z-index: 20;
-    }
-    to {
-        transform: rotateY(360deg);
-        transform-origin: right;
-        z-index: 0;
-    }
-    0%{
+        transform: rotateY(0deg);
         opacity: 0.5;
     }
     25%{
@@ -240,23 +233,18 @@ $tertiary: #999999;
         opacity: 0.1;
     }
     100%{
+        transform-origin: right;
+        z-index: 0;
         opacity: 0.5;
+        transform: rotateY(360deg);
     }
 }
 
 @-webkit-keyframes rotatingLeft {
-    from {
+    0%{
         transform: rotateY(0deg);
         transform-origin: left;
         z-index: 2;
-    }
-    to {
-        transform: rotateY(360deg);
-        transform-origin: left;
-        z-index: 20;
-    }
-
-    0%{
         opacity: 0.5;
     }
     25%{
@@ -270,6 +258,9 @@ $tertiary: #999999;
         opacity: 0.9;
     }
     100%{
+        transform: rotateY(360deg);
+        transform-origin: left;
+        z-index: 20;
         opacity: 0.5;
     }
 }
