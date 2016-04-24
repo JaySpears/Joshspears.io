@@ -116,7 +116,8 @@
 }
 @-webkit-keyframes sun {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
     bottom: -120px;
   }
   12.5% {
@@ -126,7 +127,8 @@
     bottom: 72.5%;
   }
   50% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
     bottom: -120px;
   }
   100% {
@@ -135,7 +137,8 @@
 }
 @-webkit-keyframes sun-mobile {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
     bottom: -120px;
   }
   12.5% {
@@ -145,7 +148,8 @@
     bottom: 62.5%;
   }
   50% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
     bottom: -120px;
   }
   100% {
@@ -188,13 +192,17 @@
 }
 @-webkit-keyframes rotatingRight {
   from {
-    transform: rotateY(0deg);
-    transform-origin: right;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-origin: right;
+            transform-origin: right;
     z-index: 20;
   }
   to {
-    transform: rotateY(360deg);
-    transform-origin: right;
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+    -webkit-transform-origin: right;
+            transform-origin: right;
     z-index: 0;
   }
   0% {
@@ -215,13 +223,17 @@
 }
 @-webkit-keyframes rotatingLeft {
   from {
-    transform: rotateY(0deg);
-    transform-origin: left;
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-origin: left;
+            transform-origin: left;
     z-index: 2;
   }
   to {
-    transform: rotateY(360deg);
-    transform-origin: left;
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+    -webkit-transform-origin: left;
+            transform-origin: left;
     z-index: 20;
   }
   0% {
@@ -339,6 +351,7 @@ body {
 }
 #navigation .navigation-list.extended .nav-header {
   opacity: 1;
+  transition: -webkit-transform 0s !important, opacity 0.5s;
   transition: transform 0s !important, opacity 0.5s;
   transition-delay: 0.2s !important;
 }
@@ -347,6 +360,7 @@ body {
 }
 #navigation .navigation-list.unextended .nav-header {
   opacity: 0;
+  transition: -webkit-transform 0s !important, opacity 0.5s;
   transition: transform 0s !important, opacity 0.5s;
   transition-delay: 0s !important;
 }
@@ -402,6 +416,7 @@ body {
   list-style: none;
   margin-bottom: 5px;
   opacity: 1;
+  transition: -webkit-transform 0.7s, opacity 0.2s;
   transition: transform 0.7s, opacity 0.2s;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
@@ -410,19 +425,27 @@ body {
   }
 }
 #navigation .navigation-list ul li:nth-child(2) {
+  transition: -webkit-transform 0.7s, opacity 2s;
   transition: transform 0.7s, opacity 2s;
 }
 #navigation .navigation-list.active ul li:nth-child(1) {
+  transition: -webkit-transform 0.7s, opacity 0.2s;
   transition: transform 0.7s, opacity 0.2s;
-  transform: rotate(-45deg) translate(-6px, 6px);
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+      -ms-transform: rotate(-45deg) translate(-6px, 6px);
+          transform: rotate(-45deg) translate(-6px, 6px);
 }
 #navigation .navigation-list.active ul li:nth-child(2) {
+  transition: -webkit-transform 0.7s, opacity 0.2s;
   transition: transform 0.7s, opacity 0.2s;
   opacity: 0;
 }
 #navigation .navigation-list.active ul li:nth-child(3) {
+  transition: -webkit-transform 0.7s, opacity 0.2s;
   transition: transform 0.7s, opacity 0.2s;
-  transform: rotate(45deg) translate(-5px, -5px);
+  -webkit-transform: rotate(45deg) translate(-5px, -5px);
+      -ms-transform: rotate(45deg) translate(-5px, -5px);
+          transform: rotate(45deg) translate(-5px, -5px);
 }
 #navigation .navigation-list:hover {
   cursor: pointer;
@@ -445,13 +468,19 @@ body {
   color: white;
   left: 100px;
   padding-top: 2px;
-  transform: translate(150px, 0px);
+  -webkit-transform: translate(150px, 0px);
+      -ms-transform: translate(150px, 0px);
+          transform: translate(150px, 0px);
+  transition: -webkit-transform 0.5s, opacity 0.2s;
   transition: transform 0.5s, opacity 0.2s;
 }
 #navigation .navigation-list .menu-item-one.active,
 #navigation .navigation-list .menu-item-two.active,
 #navigation .navigation-list .menu-item-three.active {
-  transform: translate(-100px, 0px);
+  -webkit-transform: translate(-100px, 0px);
+      -ms-transform: translate(-100px, 0px);
+          transform: translate(-100px, 0px);
+  transition: -webkit-transform 0.5s, opacity 0.2s;
   transition: transform 0.5s, opacity 0.2s;
   opacity: 1;
 }
@@ -474,13 +503,19 @@ body {
   opacity: 0;
   position: absolute;
   right: 0px;
-  transform: translate(150px, 0px);
+  -webkit-transform: translate(150px, 0px);
+      -ms-transform: translate(150px, 0px);
+          transform: translate(150px, 0px);
+  transition: -webkit-transform 0.5s, opacity 0.2s;
   transition: transform 0.5s, opacity 0.2s;
 }
 #navigation .navigation-list .fa-angle-double-up.active,
 #navigation .navigation-list .fa-code.active,
 #navigation .navigation-list .fa-envelope-o.active {
-  transform: translate(-100px, 0px);
+  -webkit-transform: translate(-100px, 0px);
+      -ms-transform: translate(-100px, 0px);
+          transform: translate(-100px, 0px);
+  transition: -webkit-transform 0.5s, opacity 0.2s;
   transition: transform 0.5s, opacity 0.2s;
   opacity: 1;
 }
@@ -546,24 +581,22 @@ body {
   width: 100%;
   -webkit-animation: sky 60s infinite;
   /* Safari 4+ */
-  -moz-animation: sky 60s infinite;
   /* Fx 5+ */
-  -o-animation: sky 60s infinite;
   /* Opera 12+ */
   animation: sky 60s infinite;
-  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section {
     height: 100vh;
     -webkit-animation: sky-mobile 60s infinite;
     /* Safari 4+ */
-    -moz-animation: sky-mobile 60s infinite;
     /* Fx 5+ */
-    -o-animation: sky-mobile 60s infinite;
     /* Opera 12+ */
     animation: sky-mobile 60s infinite;
-    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
   }
   .hero-section.mobile-detection-height {
     height: calc(100vh - 70px);
@@ -575,26 +608,24 @@ body {
   width: 100%;
   -webkit-animation: starryNight 60s infinite;
   /* Safari 4+ */
-  -moz-animation: starryNight 60s infinite;
   /* Fx 5+ */
-  -o-animation: starryNight 60s infinite;
   /* Opera 12+ */
   animation: starryNight 60s infinite;
-  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section .starry-night {
     -webkit-animation: starryNight 60s infinite;
     /* Safari 4+ */
-    -moz-animation: starryNight 60s infinite;
     /* Fx 5+ */
-    -o-animation: starryNight 60s infinite;
     /* Opera 12+ */
     animation: starryNight 60s infinite;
   }
 }
 .hero-section .starry-night p {
-  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
   position: absolute;
 }
 .hero-section .moon-sun {
@@ -602,7 +633,9 @@ body {
   z-index: 0;
   top: 0;
   width: 100%;
-  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
 }
 .hero-section .moon-sun .moon {
   position: absolute;
@@ -612,12 +645,11 @@ body {
   border-radius: 100%;
   -webkit-animation: moon 60s infinite;
   /* Safari 4+ */
-  -moz-animation: moon 60s infinite;
   /* Fx 5+ */
-  -o-animation: moon 60s infinite;
   /* Opera 12+ */
   animation: moon 60s infinite;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section .moon-sun .moon {
@@ -625,9 +657,7 @@ body {
     left: 6.5%;
     -webkit-animation: moon-mobile 60s infinite;
     /* Safari 4+ */
-    -moz-animation: moon-mobile 60s infinite;
     /* Fx 5+ */
-    -o-animation: moon-mobile 60s infinite;
     /* Opera 12+ */
     animation: moon-mobile 60s infinite;
   }
@@ -642,12 +672,11 @@ body {
   box-shadow: 0px 0px 100px 10px rgba(255, 255, 175, 0.6);
   -webkit-animation: sun 60s infinite;
   /* Safari 4+ */
-  -moz-animation: sun 60s infinite;
   /* Fx 5+ */
-  -o-animation: sun 60s infinite;
   /* Opera 12+ */
   animation: sun 60s infinite;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section .moon-sun .sun {
@@ -657,9 +686,7 @@ body {
     box-shadow: 0px 0px 100px 10px rgba(255, 255, 175, 0.8);
     -webkit-animation: sun-mobile 60s infinite;
     /* Safari 4+ */
-    -moz-animation: sun-mobile 60s infinite;
     /* Fx 5+ */
-    -o-animation: sun-mobile 60s infinite;
     /* Opera 12+ */
     animation: sun-mobile 60s infinite;
   }
@@ -680,12 +707,11 @@ body {
   top: 12%;
   -webkit-animation: fromLeft 120s infinite;
   /* Safari 4+ */
-  -moz-animation: fromLeft 120s infinite;
   /* Fx 5+ */
-  -o-animation: fromLeft 120s infinite;
   /* Opera 12+ */
   animation: fromLeft 120s infinite;
-  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section .island-animation-wrapper .cloud-one {
@@ -698,12 +724,11 @@ body {
   top: 30%;
   -webkit-animation: fromRight 60s infinite;
   /* Safari 4+ */
-  -moz-animation: fromRight 60s infinite;
   /* Fx 5+ */
-  -o-animation: fromRight 60s infinite;
   /* Opera 12+ */
   animation: fromRight 60s infinite;
-  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section .island-animation-wrapper .cloud-two {
@@ -729,12 +754,11 @@ body {
   border-color: transparent transparent transparent #ffffdc;
   -webkit-animation: rotatingRight 8s infinite;
   /* Safari 4+ */
-  -moz-animation: rotatingRight 8s infinite;
   /* Fx 5+ */
-  -o-animation: rotatingRight 8s infinite;
   /* Opera 12+ */
   animation: rotatingRight 8s infinite;
-  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section .island-animation-wrapper .lighthouse-rays-left {
@@ -755,12 +779,11 @@ body {
   border-color: transparent #ffffdc transparent transparent;
   -webkit-animation: rotatingLeft 8s infinite;
   /* Safari 4+ */
-  -moz-animation: rotatingLeft 8s infinite;
   /* Fx 5+ */
-  -o-animation: rotatingLeft 8s infinite;
   /* Opera 12+ */
   animation: rotatingLeft 8s infinite;
-  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 @media screen and (min-width: 320px) and (max-width: 1023px) {
   .hero-section .island-animation-wrapper .lighthouse-rays-right {
@@ -810,12 +833,11 @@ body {
 .hero-section .island-animation-wrapper .wave-one {
   -webkit-animation: horizonBlur 60s infinite;
   /* Safari 4+ */
-  -moz-animation: horizonBlur 60s infinite;
   /* Fx 5+ */
-  -o-animation: horizonBlur 60s infinite;
   /* Opera 12+ */
   animation: horizonBlur 60s infinite;
-  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
   background-color: #20b1ba;
 }
 .hero-section .island-animation-wrapper .wave-two {
@@ -947,5 +969,3 @@ footer h3 {
   margin-top: 0px;
   text-align: center;
 }
-
-/*# sourceMappingURL=styles.css.map */
