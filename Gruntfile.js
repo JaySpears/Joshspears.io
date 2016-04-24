@@ -26,6 +26,15 @@ module.exports = function(grunt) {
 			}
 		},
 
+		autoprefixer: {
+			options: {
+				browsers: ['last 2 versions', 'ie 8', 'ie 9']
+			},
+			main: {
+				src: 'public/assets/css/styles.css'
+			}
+		},
+
 		// Minify JS
 		uglify: {
 			scripts: {
@@ -37,7 +46,7 @@ module.exports = function(grunt) {
 		// Watch command
 		watch: {
 			styles: {
-				files: 'public/assets/css/src/*.scss',
+				files: ['public/assets/css/src/*.scss', 'public/assets/css/styles.css'],
 				tasks: 'dist-styles',
 				options: {
 					livereload: true
@@ -51,6 +60,7 @@ module.exports = function(grunt) {
 	});
 
 	// Loads grunt dependencies
+	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -60,7 +70,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('dist-scripts', ['uglify']);
 
 	// Styles distribution task
-	grunt.registerTask('dist-styles', ['sass', 'cssmin']);
+	grunt.registerTask('dist-styles', ['sass', 'autoprefixer', 'cssmin']);
 
 	// Full distribution task
 	grunt.registerTask('dist', ['dist-styles', 'dist-scripts']);
