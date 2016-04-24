@@ -674,7 +674,7 @@ body {
   .hero-section .moon-sun .sun {
     width: 50px;
     left: 6.5%;
-    background-color: rgba(255, 255, 175, 0.3);
+    background-color: rgba(255, 255, 175, 0.2);
     box-shadow: 0px 0px 100px 10px rgba(255, 255, 175, 0.8);
     -webkit-animation: sun-mobile 60s infinite;
     /* Safari 4+ */
