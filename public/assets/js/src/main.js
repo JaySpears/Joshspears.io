@@ -77,7 +77,7 @@ $(function () {
 
     $('#navigation-arrow').on('click',function(){
         $('html, body').animate({
-            scrollTop: $("#builds").offset().top
+            scrollTop: $("#skills").offset().top
         }, 1800, 'easeInOutExpo');
     });
 
@@ -145,7 +145,7 @@ $(function () {
 
     function starCount(device){
         if (device >= 1024) {
-            for (var i = 150; i > 1; i--) {
+            for (var i = 200; i > 1; i--) {
                 $('.starry-night').append($('<p>.</p>'));
             }
         } else if (device <= 1023 && device >= 768){
@@ -159,6 +159,7 @@ $(function () {
         }
     }
 
+    $('.carousel').slick();
     oceanImagesHeight();
     setSolarSystem();
     starCount(viewportWidth);

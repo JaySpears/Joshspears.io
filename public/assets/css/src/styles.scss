@@ -19,29 +19,7 @@ $tertiary: #999999;
     0% {
         left: -8%;
     }
-    20%{
-        opacity: 1;
-    }
-    25%{
-        opacity: 0.2;
-    }
-    46%{
-        opacity: 0.2;
-    }
-    50%{
-        opacity: 1;
-    }
-    70%{
-        opacity: 1;
-    }
-    75%{
-        opacity: 0.2;
-    }
-    96%{
-        opacity: 0.2;
-    }
     100% {
-        opacity: 1;
         left: 100%;
     }
 }
@@ -50,17 +28,7 @@ $tertiary: #999999;
     0% {
         right: -8%;
     }
-    44%{
-        opacity: 1;
-    }
-    50%{
-        opacity: 0.2;
-    }
-    96%{
-        opacity: 0.2;
-    }
     100% {
-        opacity: 1;
         right: 100%;
     }
 }
@@ -183,17 +151,8 @@ $tertiary: #999999;
     0%{
         bottom: -120px;
     }
-    45%{
-        bottom: -120px;
-    }
-    57.7%{
-        bottom: 70%;
-    }
-    87.5%{
-        bottom: 70%;
-    }
-    100% {
-        bottom: -90px;
+    100%{
+        bottom: 74%;
     }
 }
 
@@ -450,7 +409,8 @@ body{
         }
         .menu-item-one,
         .menu-item-two,
-        .menu-item-three{
+        .menu-item-three,
+        .menu-item-four{
             opacity: 0;
             position: absolute;
             color: $white;
@@ -473,12 +433,17 @@ body{
             left: 118px;
             font-size: 22px;
         }
+        .fa-graduation-cap{
+            left: 117px;
+            font-size: 20px;
+        }
         .fa-envelope-o{
-            left: 120.5px;
+            left: 119.5px;
             font-size: 22px;
         }
-         .fa-angle-double-up,
+        .fa-angle-double-up,
         .fa-code,
+        .fa-graduation-cap,
         .fa-envelope-o{
             opacity: 0;
             position: absolute;
@@ -502,7 +467,7 @@ body{
             transition-delay: 0.53s;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
                 top: 15px;
-                margin-left: 78px;
+                margin-left: 73px;
                 transition-delay: 0.4s;
             }
             &.active{
@@ -510,12 +475,12 @@ body{
             }
         }
         .menu-item-two,
-        .fa-code{
+        .fa-graduation-cap{
             top: 130px;
             transition-delay: 0.34s;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
                 top: 15px;
-                margin-left: 138px;
+                margin-left: 123px;
                 transition-delay: 0.3s;
             }
             &.active{
@@ -523,16 +488,29 @@ body{
             }
         }
         .menu-item-three,
-        .fa-envelope-o{
+        .fa-code{
             top: 180px;
             transition-delay: 0.2s;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
                 top: 15px;
-                margin-left: 216px;
+                margin-left: 185px;
                 transition-delay: 0.2s;
             }
             &.active{
                 transition-delay: 0.4s;
+            }
+        }
+        .menu-item-four,
+        .fa-envelope-o{
+            top: 230px;
+            transition-delay: 0.1s;
+            @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
+                top: 15px;
+                margin-left: 250px;
+                transition-delay: 0.1s;
+            }
+            &.active{
+                transition-delay: 0.5s;
             }
         }
     }
@@ -540,18 +518,19 @@ body{
 .hero-section{
     height: 100vh;
     width: 100%;
-    -webkit-animation: sky 60s infinite; /* Safari 4+ */
-    -moz-animation:    sky 60s infinite; /* Fx 5+ */
-    -o-animation:      sky 60s infinite; /* Opera 12+ */
-    animation:         sky 60s infinite;
-    animation-timing-function: linear;
+    background-color: #222222;
+    // -webkit-animation: sky 60s infinite; /* Safari 4+ */
+    // -moz-animation:    sky 60s infinite; /* Fx 5+ */
+    // -o-animation:      sky 60s infinite; /* Opera 12+ */
+    // animation:         sky 60s infinite;
+    // animation-timing-function: linear;
     @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
         height: 100vh;
-        -webkit-animation: sky-mobile 60s infinite; /* Safari 4+ */
-        -moz-animation:    sky-mobile 60s infinite; /* Fx 5+ */
-        -o-animation:      sky-mobile 60s infinite; /* Opera 12+ */
-        animation:         sky-mobile 60s infinite;
-        animation-timing-function: linear;
+        // -webkit-animation: sky-mobile 60s infinite; /* Safari 4+ */
+        // -moz-animation:    sky-mobile 60s infinite; /* Fx 5+ */
+        // -o-animation:      sky-mobile 60s infinite; /* Opera 12+ */
+        // animation:         sky-mobile 60s infinite;
+        // animation-timing-function: linear;
         &.mobile-detection-height{
             height: calc(100vh - 70px);
         }
@@ -560,16 +539,16 @@ body{
         position: absolute;
         z-index: 1;
         width: 100%;
-        -webkit-animation: starryNight 60s infinite; /* Safari 4+ */
-        -moz-animation:    starryNight 60s infinite; /* Fx 5+ */
-        -o-animation:      starryNight 60s infinite; /* Opera 12+ */
-        animation:         starryNight 60s infinite;
+        // -webkit-animation: starryNight 60s infinite; /* Safari 4+ */
+        // -moz-animation:    starryNight 60s infinite; /* Fx 5+ */
+        // -o-animation:      starryNight 60s infinite; /* Opera 12+ */
+        // animation:         starryNight 60s infinite;
         animation-timing-function: linear;
         @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-            -webkit-animation: starryNight 60s infinite; /* Safari 4+ */
-            -moz-animation:    starryNight 60s infinite; /* Fx 5+ */
-            -o-animation:      starryNight 60s infinite; /* Opera 12+ */
-            animation:         starryNight 60s infinite;
+            // -webkit-animation: starryNight 60s infinite; /* Safari 4+ */
+            // -moz-animation:    starryNight 60s infinite; /* Fx 5+ */
+            // -o-animation:      starryNight 60s infinite; /* Opera 12+ */
+            // animation:         starryNight 60s infinite;
         }
         p{
             animation-timing-function: linear;
@@ -588,23 +567,25 @@ body{
             position: absolute;
             left: 5%;
             width: 70px;
-            box-shadow: 0 0 40px 0px rgba(255,255,255,1);
+            bottom: 74%;
+            box-shadow: 0 0 110px 5px #fff;
             border-radius: 100%;
-            -webkit-animation: moon 60s infinite; /* Safari 4+ */
-            -moz-animation:    moon 60s infinite; /* Fx 5+ */
-            -o-animation:      moon 60s infinite; /* Opera 12+ */
-            animation:         moon 60s infinite;
+            -webkit-animation: moon 9s; /* Safari 4+ */
+            -moz-animation:    moon 9s; /* Fx 5+ */
+            -o-animation:      moon 9s; /* Opera 12+ */
+            animation:         moon 9s;
             animation-timing-function: ease-in-out;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
                 width: 45px;
                 left: 6.5%;
-                -webkit-animation: moon-mobile 60s infinite; /* Safari 4+ */
-                -moz-animation:    moon-mobile 60s infinite; /* Fx 5+ */
-                -o-animation:      moon-mobile 60s infinite; /* Opera 12+ */
-                animation:         moon-mobile 60s infinite;
+                // -webkit-animation: moon-mobile 60s infinite; /* Safari 4+ */
+                // -moz-animation:    moon-mobile 60s infinite; /* Fx 5+ */
+                // -o-animation:      moon-mobile 60s infinite; /* Opera 12+ */
+                // animation:         moon-mobile 60s infinite;
             }
         }
         .sun{
+            display: none;
             position: absolute;
             left: 5%;
             margin-top: 55px;
@@ -640,6 +621,7 @@ body{
             height: 3%;
             position: absolute;
             top: 12%;
+            opacity: 0.5;
             -webkit-animation: fromLeft 120s infinite; /* Safari 4+ */
             -moz-animation:    fromLeft 120s infinite; /* Fx 5+ */
             -o-animation:      fromLeft 120s infinite; /* Opera 12+ */
@@ -653,6 +635,7 @@ body{
             height: 3%;
             position: absolute;
             top: 30%;
+            opacity: 0.5;
             -webkit-animation: fromRight 60s infinite; /* Safari 4+ */
             -moz-animation:    fromRight 60s infinite; /* Fx 5+ */
             -o-animation:      fromRight 60s infinite; /* Opera 12+ */
@@ -747,14 +730,15 @@ body{
         .wave-three{
             position: absolute;
             width: 100%;
-            height: 15%;
+            height: 13%;
             z-index: 100;
         }
         .wave-one{
-            -webkit-animation: horizonBlur 60s infinite; /* Safari 4+ */
-            -moz-animation:    horizonBlur 60s infinite; /* Fx 5+ */
-            -o-animation:      horizonBlur 60s infinite; /* Opera 12+ */
-            animation:         horizonBlur 60s infinite;
+            // -webkit-animation: horizonBlur 60s infinite; /* Safari 4+ */
+            // -moz-animation:    horizonBlur 60s infinite; /* Fx 5+ */
+            // -o-animation:      horizonBlur 60s infinite; /* Opera 12+ */
+            // animation:         horizonBlur 60s infinite;
+            box-shadow: inset 0 60px 60px -60px rgba(0,0,0,0.8);;
             animation-timing-function: linear;
             background-color: #20b1ba;
         }
@@ -851,6 +835,91 @@ body{
     }
 }
 
+.skills-section{
+    height: 100%;
+    width: 100%;
+    padding-top: 60px;
+    background-color: #4c4c4c;
+    padding-bottom: 30px;
+    box-shadow: inset 5px 2px 300px 1px #262626;
+    @media screen and (min-width: $tablet-min) and (max-width: $tablet-max){
+        padding-bottom: 40px;
+    }
+    h4{
+        margin-top: 0px;
+        text-align: center;
+        margin-bottom: 50px;
+        @media screen and (min-width: $tablet-min) and (max-width: $tablet-max){
+            margin-bottom: 0px;
+        }
+    }
+    .carousel{
+        display: none;
+        @media screen and (max-width: $mobile-max){
+            display: block;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: "FontAwesome";
+            font-size: 27px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .slick-next{
+        z-index: 100;
+            right: 20px;
+            &:before{
+                content: "\f18e";
+            }
+        }
+        .slick-prev{
+                    z-index: 100;
+
+            left: 20px;
+            &:before{
+                content: "\f190";
+            }
+        }
+    }
+    .row{
+        display: block;
+        margin-bottom: 55px;
+        @media screen and (min-width: $tablet-min) and (max-width: $tablet-max){
+            margin-bottom: 0px;
+        }
+        @media screen and (max-width: $mobile-max){
+            display: none;
+        }
+    }
+    .col-md-2,
+    .col-sm-4,
+    .col-xs-12{
+        height: 100px;
+        text-align: center;
+        .helper {
+            height: 100%;
+            img{
+                height: 100%;
+                max-width: 80px;
+                max-height: 80px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .col-sm-4{
+        @media screen and (min-width: $tablet-min) and (max-width: $tablet-max){
+            margin-top: 45px;
+        }
+    }
+    .col-xs-12{
+        height: 110px;
+        .helper{
+            img{
+                margin: 0 auto 10px auto;
+            }
+        }
+    }
+}
 .builds-section{
     height: 600px;
     width: 100%;
