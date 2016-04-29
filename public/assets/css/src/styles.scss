@@ -1309,6 +1309,15 @@ footer{
     p{
         font-size: 13px;
         margin-top: 10px;
+        a{
+            color: #999;
+            transition: color 1s;
+            &:hover{
+                transition: color 1s;
+                color: lightblue;
+                text-decoration: none;
+            }
+        }
     }
     h3{
         margin-top: 0px;
