@@ -1434,16 +1434,28 @@ body h4 {
   position: absolute;
 }
 .contact-section .scroll-wrapper .form-wrapper form #name-error {
-  left: 164px;
+  left: 158px;
   top: 105px;
   font-size: 11px;
   color: crimson;
 }
+@media screen and (max-width: 767px) {
+  .contact-section .scroll-wrapper .form-wrapper form #name-error {
+    left: 19px;
+    top: 136px;
+  }
+}
 .contact-section .scroll-wrapper .form-wrapper form #email-error {
-  left: 398px;
+  left: 418px;
   top: 105px;
   font-size: 11px;
   color: crimson;
+}
+@media screen and (max-width: 767px) {
+  .contact-section .scroll-wrapper .form-wrapper form #email-error {
+    left: 19px;
+    top: 206px;
+  }
 }
 .contact-section .scroll-wrapper .form-wrapper form #email-content-error {
   left: 72px;
@@ -1451,11 +1463,25 @@ body h4 {
   font-size: 11px;
   color: crimson;
 }
+@media screen and (max-width: 767px) {
+  .contact-section .scroll-wrapper .form-wrapper form #email-content-error {
+    left: 19px;
+    top: 431px;
+  }
+}
 .contact-section .scroll-wrapper .form-wrapper form .name-signature {
   font-family: 'Great Vibes';
   float: right;
   font-size: 33px;
   text-transform: initial;
+}
+@media screen and (max-width: 767px) {
+  .contact-section .scroll-wrapper .form-wrapper form .name-signature {
+    top: -89px;
+    position: relative;
+    width: 100%;
+    margin-left: 0px;
+  }
 }
 
 footer {
