@@ -15,9 +15,10 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.6",
-    "jquery-ui": "~1.11.4",
     "jquery-easing": "*",
-    "slick-carousel": "~1.5.9",
-    "normalize-css": "normalize.css#~4.1.1"
+    "jquery-ui": "~1.11.4",
+    "jquery-validation": "jquery-validate#~1.15.0",
+    "normalize-css": "normalize.css#~4.1.1",
+    "slick-carousel": "~1.5.9"
   }
 }
