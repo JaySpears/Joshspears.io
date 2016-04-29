@@ -1,0 +1,19 @@
+{
+  "name": "joshspears.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/JoshSpears3/joshspears.io",
+  "authors": [
+    "JoshSpears3 <josh.spears@sq1.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-ui": "~1.11.4"
+  }
+}
