@@ -23,7 +23,7 @@ module.exports = function (shipit) {
 
   // this task runs an NPM install remotely to install dependencies
   shipit.blTask('install', function () {
-    return shipit.remote(pathStr + " && cd " + currentPath + " && npm install &> /dev/null");
+    return shipit.remote(pathStr + " && cd " + currentPath + " && npm install && bower install &> /dev/null");
   });
 
   // this task starts the server in a screen with a name set in the config
