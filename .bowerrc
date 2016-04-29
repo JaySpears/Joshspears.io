@@ -1,11 +1,3 @@
 {
-  "directory": "bower_components",
-  "analytics": false,
-  "timeout": 120000,
-  "registry": {
-    "search": [
-      "localhost",
-      "http://joshspears.io"
-    ]
-  }
+  "directory": "bower_components"
 }
