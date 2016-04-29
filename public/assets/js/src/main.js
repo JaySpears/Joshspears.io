@@ -1,6 +1,7 @@
 'use strict';
 $(function () {
     $(document).ready(function(){
+
         var viewportWidth = $(window).width();
         var nav = $('#navigation');
         var heroSection = $('.hero-section');
@@ -181,7 +182,6 @@ $(function () {
             }
         }
 
-
         scrollForm.validate({
             rules: {
                 "name": {
@@ -299,27 +299,19 @@ $(function () {
             }
         }
 
-        headerBackgroundTransition();
-        $(window).on('scroll', function(){
-            headerBackgroundTransition();
-            if($(window).scrollTop() >= 1620){
-                writeLetter();
-            }
-        });
-
         formSubmitButton.on('click', sendEmail);
         formSubmitButton.on('click', signForm);
 
-
         $('.carousel').slick({
-             autoplay: true,
-             autoplaySpeed: 1500
-         }
-        );
+            autoplay: true,
+            autoplaySpeed: 1500
+        });
+
         oceanImagesHeight();
         setSolarSystem();
         starCount(viewportWidth);
         starryNight();
+        headerBackgroundTransition();
 
         $(window).on('resize', function(){
             oceanImagesHeight();
@@ -327,9 +319,16 @@ $(function () {
             starCount(viewportWidth);
         });
 
+        $(window).on('scroll', function(){
+            headerBackgroundTransition();
+            if($(window).scrollTop() >= 1620){
+                writeLetter();
+            }
+        });
+
         if (viewportWidth <= 767) {
             heroSection.addClass('mobile-detection-height');
         }
-        
+
     });
 });
