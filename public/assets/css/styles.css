@@ -591,9 +591,6 @@ body h4 {
   box-shadow: 0 0 80px 0px #fff;
   border-radius: 100%;
   -webkit-animation: moon 6.5s;
-  /* Safari 4+ */
-  /* Fx 5+ */
-  /* Opera 12+ */
   animation: moon 6.5s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
@@ -610,9 +607,6 @@ body h4 {
     bottom: 60%;
     left: 6.5%;
     -webkit-animation: moon-mobile 7s;
-    /* Safari 4+ */
-    /* Fx 5+ */
-    /* Opera 12+ */
     animation: moon-mobile 7s;
   }
 }
@@ -626,9 +620,6 @@ body h4 {
   background-color: rgba(255, 255, 175, 0.3);
   box-shadow: 0px 0px 100px 10px rgba(255, 255, 175, 0.6);
   -webkit-animation: sun 60s infinite;
-  /* Safari 4+ */
-  /* Fx 5+ */
-  /* Opera 12+ */
   animation: sun 60s infinite;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
@@ -640,9 +631,6 @@ body h4 {
     background-color: rgba(255, 255, 175, 0.2);
     box-shadow: 0px 0px 100px 10px rgba(255, 255, 175, 0.8);
     -webkit-animation: sun-mobile 60s infinite;
-    /* Safari 4+ */
-    /* Fx 5+ */
-    /* Opera 12+ */
     animation: sun-mobile 60s infinite;
   }
 }
@@ -662,9 +650,6 @@ body h4 {
   top: 12%;
   opacity: 0.5;
   -webkit-animation: fromLeft 120s infinite;
-  /* Safari 4+ */
-  /* Fx 5+ */
-  /* Opera 12+ */
   animation: fromLeft 120s infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
@@ -680,9 +665,6 @@ body h4 {
   top: 30%;
   opacity: 0.5;
   -webkit-animation: fromRight 60s infinite;
-  /* Safari 4+ */
-  /* Fx 5+ */
-  /* Opera 12+ */
   animation: fromRight 60s infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
@@ -710,9 +692,6 @@ body h4 {
   border-width: 12px 0 12px 90px;
   border-color: transparent transparent transparent #ffffdc;
   -webkit-animation: rotatingRight 8s infinite;
-  /* Safari 4+ */
-  /* Fx 5+ */
-  /* Opera 12+ */
   animation: rotatingRight 8s infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
@@ -736,9 +715,6 @@ body h4 {
   border-width: 12px 90px 12px 0;
   border-color: transparent #ffffdc transparent transparent;
   -webkit-animation: rotatingLeft 8s infinite;
-  /* Safari 4+ */
-  /* Fx 5+ */
-  /* Opera 12+ */
   animation: rotatingLeft 8s infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
@@ -1496,6 +1472,15 @@ footer {
 footer p {
   font-size: 13px;
   margin-top: 10px;
+}
+footer p a {
+  color: #999;
+  transition: color 1s;
+}
+footer p a:hover {
+  transition: color 1s;
+  color: lightblue;
+  text-decoration: none;
 }
 footer h3 {
   margin-top: 0px;

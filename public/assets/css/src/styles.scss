@@ -76,7 +76,6 @@ $tertiary: #999999;
     }
 }
 
-
 @-webkit-keyframes starFade {
     0%{
         opacity: 1;
@@ -513,22 +512,13 @@ body{
         }
     }
 }
+
 .hero-section{
     height: 100vh;
     width: 100%;
     background-color: #111111;
-    // -webkit-animation: sky 60s infinite; /* Safari 4+ */
-    // -moz-animation:    sky 60s infinite; /* Fx 5+ */
-    // -o-animation:      sky 60s infinite; /* Opera 12+ */
-    // animation:         sky 60s infinite;
-    // animation-timing-function: linear;
     @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
         height: 100vh;
-        // -webkit-animation: sky-mobile 60s infinite; /* Safari 4+ */
-        // -moz-animation:    sky-mobile 60s infinite; /* Fx 5+ */
-        // -o-animation:      sky-mobile 60s infinite; /* Opera 12+ */
-        // animation:         sky-mobile 60s infinite;
-        // animation-timing-function: linear;
         &.mobile-detection-height{
             height: calc(100vh - 70px);
         }
@@ -537,30 +527,18 @@ body{
         position: absolute;
         z-index: 1;
         width: 100%;
-        // -webkit-animation: starryNight 60s infinite; /* Safari 4+ */
-        // -moz-animation:    starryNight 60s infinite; /* Fx 5+ */
-        // -o-animation:      starryNight 60s infinite; /* Opera 12+ */
-        // animation:         starryNight 60s infinite;
         animation-timing-function: linear;
-        @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
-            // -webkit-animation: starryNight 60s infinite; /* Safari 4+ */
-            // -moz-animation:    starryNight 60s infinite; /* Fx 5+ */
-            // -o-animation:      starryNight 60s infinite; /* Opera 12+ */
-            // animation:         starryNight 60s infinite;
-        }
         p{
             animation-timing-function: linear;
             position: absolute;
         }
     }
-
     .moon-sun{
         position: absolute;
         z-index: 0;
         top: 0;
         width: 100%;
         transform-origin:50% 50%;
-
         .moon{
             position: absolute;
             left: 5%;
@@ -568,26 +546,22 @@ body{
             bottom: 74%;
             box-shadow: 0 0 80px 0px #fff;
             border-radius: 100%;
-            -webkit-animation: moon 6.5s; /* Safari 4+ */
-            -moz-animation:    moon 6.5s; /* Fx 5+ */
-            -o-animation:      moon 6.5s; /* Opera 12+ */
+            -webkit-animation: moon 6.5s;
+            -moz-animation:    moon 6.5s;
+            -o-animation:      moon 6.5s;
             animation:         moon 6.5s;
             animation-timing-function: ease-in-out;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
                 width: 45px;
                 left: 6.5%;
-                // -webkit-animation: moon-mobile 60s infinite; /* Safari 4+ */
-                // -moz-animation:    moon-mobile 60s infinite; /* Fx 5+ */
-                // -o-animation:      moon-mobile 60s infinite; /* Opera 12+ */
-                // animation:         moon-mobile 60s infinite;
             }
             @media screen and (min-width: $mobile-min) and (max-width: $mobile-max){
                 width: 45px;
                 bottom: 60%;
                 left: 6.5%;
-                -webkit-animation: moon-mobile 7s; /* Safari 4+ */
-                -moz-animation:    moon-mobile 7s; /* Fx 5+ */
-                -o-animation:      moon-mobile 7s; /* Opera 12+ */
+                -webkit-animation: moon-mobile 7s;
+                -moz-animation:    moon-mobile 7s;
+                -o-animation:      moon-mobile 7s;
                 animation:         moon-mobile 7s;
             }
         }
@@ -600,9 +574,9 @@ body{
             border-radius: 100%;
             background-color: rgba(255,255,175,.3);
             box-shadow: 0px 0px 100px 10px rgba(255,255,175,.6);
-            -webkit-animation: sun 60s infinite; /* Safari 4+ */
-            -moz-animation:    sun 60s infinite; /* Fx 5+ */
-            -o-animation:      sun 60s infinite; /* Opera 12+ */
+            -webkit-animation: sun 60s infinite;
+            -moz-animation:    sun 60s infinite;
+            -o-animation:      sun 60s infinite;
             animation:         sun 60s infinite;
             animation-timing-function: ease-in-out;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
@@ -610,9 +584,9 @@ body{
                 left: 6.5%;
                 background-color: rgba(255,255,175,.2);
                 box-shadow: 0px 0px 100px 10px rgba(255,255,175,.8);
-                -webkit-animation: sun-mobile 60s infinite; /* Safari 4+ */
-                -moz-animation:    sun-mobile 60s infinite; /* Fx 5+ */
-                -o-animation:      sun-mobile 60s infinite; /* Opera 12+ */
+                -webkit-animation: sun-mobile 60s infinite;
+                -moz-animation:    sun-mobile 60s infinite;
+                -o-animation:      sun-mobile 60s infinite;
                 animation:         sun-mobile 60s infinite;
             }
         }
@@ -629,9 +603,9 @@ body{
             position: absolute;
             top: 12%;
             opacity: 0.5;
-            -webkit-animation: fromLeft 120s infinite; /* Safari 4+ */
-            -moz-animation:    fromLeft 120s infinite; /* Fx 5+ */
-            -o-animation:      fromLeft 120s infinite; /* Opera 12+ */
+            -webkit-animation: fromLeft 120s infinite;
+            -moz-animation:    fromLeft 120s infinite;
+            -o-animation:      fromLeft 120s infinite;
             animation:         fromLeft 120s infinite;
             animation-timing-function: linear;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
@@ -643,9 +617,9 @@ body{
             position: absolute;
             top: 30%;
             opacity: 0.5;
-            -webkit-animation: fromRight 60s infinite; /* Safari 4+ */
-            -moz-animation:    fromRight 60s infinite; /* Fx 5+ */
-            -o-animation:      fromRight 60s infinite; /* Opera 12+ */
+            -webkit-animation: fromRight 60s infinite;
+            -moz-animation:    fromRight 60s infinite;
+            -o-animation:      fromRight 60s infinite;
             animation:         fromRight 60s infinite;
             animation-timing-function: linear;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
@@ -658,9 +632,6 @@ body{
             margin: 0 auto;
             width: 100%;
         }
-
-
-
         .lighthouse-rays-left{
             position: absolute;
             width: 0;
@@ -672,9 +643,9 @@ body{
             border-radius: 20px;
             border-width: 12px 0 12px 90px;
             border-color: transparent transparent transparent #ffffdc;
-            -webkit-animation: rotatingRight 8s infinite; /* Safari 4+ */
-            -moz-animation:    rotatingRight 8s infinite; /* Fx 5+ */
-            -o-animation:      rotatingRight 8s infinite; /* Opera 12+ */
+            -webkit-animation: rotatingRight 8s infinite;
+            -moz-animation:    rotatingRight 8s infinite;
+            -o-animation:      rotatingRight 8s infinite;
             animation:         rotatingRight 8s infinite;
             animation-timing-function: linear;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
@@ -694,9 +665,9 @@ body{
             border-radius: 20px;
             border-width: 12px 90px 12px 0;
             border-color: transparent #ffffdc transparent transparent;
-            -webkit-animation: rotatingLeft 8s infinite; /* Safari 4+ */
-            -moz-animation:    rotatingLeft 8s infinite; /* Fx 5+ */
-            -o-animation:      rotatingLeft 8s infinite; /* Opera 12+ */
+            -webkit-animation: rotatingLeft 8s infinite;
+            -moz-animation:    rotatingLeft 8s infinite;
+            -o-animation:      rotatingLeft 8s infinite;
             animation:         rotatingLeft 8s infinite;
             animation-timing-function: linear;
             @media screen and (min-width: $mobile-min) and (max-width: $tablet-max){
@@ -706,7 +677,6 @@ body{
                 overflow: hidden !important;
             }
         }
-
         .island{
             z-index: 10;
             height: auto;
@@ -733,7 +703,6 @@ body{
                 display: block;
             }
         }
-
         .wave-one,
         .wave-two,
         .wave-three{
@@ -746,10 +715,6 @@ body{
             }
         }
         .wave-one{
-            // -webkit-animation: horizonBlur 60s infinite; /* Safari 4+ */
-            // -moz-animation:    horizonBlur 60s infinite; /* Fx 5+ */
-            // -o-animation:      horizonBlur 60s infinite; /* Opera 12+ */
-            // animation:         horizonBlur 60s infinite;
             box-shadow: inset 0 60px 60px -60px rgba(0,0,0,0.8);
             animation-timing-function: linear;
             background-color: #3399FF;
@@ -764,7 +729,6 @@ body{
             background-color: #2493D0;
         }
     }
-
     .container{
         height: 100vh;
         h4{
@@ -828,7 +792,6 @@ body{
                     margin-bottom: -60px;
                 }
             }
-
             .navigation-arrow-wrapper{
                 width: 100px;
                 margin: 0 auto 30px auto;
@@ -972,6 +935,7 @@ body{
         }
     }
 }
+
 .builds-section{
     height: auto;
     width: 100%;
@@ -1345,6 +1309,15 @@ footer{
     p{
         font-size: 13px;
         margin-top: 10px;
+        a{
+            color: #999;
+            transition: color 1s;
+            &:hover{
+                transition: color 1s;
+                color: lightblue;
+                text-decoration: none;
+            }
+        }
     }
     h3{
         margin-top: 0px;
