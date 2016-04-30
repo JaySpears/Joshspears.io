@@ -156,16 +156,16 @@ $(function () {
 
         function starCount(device){
             if (device >= 1024) {
-                for (var i = 200; i > 1; i--) {
-                    $('.starry-night').append($('<p>.</p>'));
+                for (var i = 150; i > 1; i--) {
+                    $('.starry-night').append($('<p><i style="font-size: 5px;"class="fa fa-star" aria-hidden="true"></i></p>'));
                 }
             } else if (device <= 1023 && device >= 768){
-                for (var i = 70; i > 1; i--) {
-                    $('.starry-night').append($('<p>.</p>'));
+                for (var i = 60; i > 1; i--) {
+                    $('.starry-night').append($('<p><i style="font-size: 5px;"class="fa fa-star" aria-hidden="true"></i></p>'));
                 }
             } else {
-                for (var i = 35; i > 1; i--) {
-                    $('.starry-night').append($('<p>.</p>'));
+                for (var i = 25; i > 1; i--) {
+                    $('.starry-night').append($('<p><i style="font-size: 5px;"class="fa fa-star" aria-hidden="true"></i></p>'));
                 }
             }
         }
