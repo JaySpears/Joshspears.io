@@ -1019,6 +1019,12 @@ body{
                 background-size: 152px;
                 background-color: #111;
             }
+            &.lowt{
+                background-position: center;
+                background-image: url(../img/lowt-min.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
         }
     }
 }
