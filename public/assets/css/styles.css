@@ -1121,6 +1121,12 @@ body h4 {
   background-size: 152px;
   background-color: #111;
 }
+.builds-section .row .col-md-4.lowt {
+  background-position: center;
+  background-image: url(../img/lowt-min.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .contact-section {
   height: auto;
