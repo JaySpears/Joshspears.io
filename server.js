@@ -1,6 +1,6 @@
-var express = require('express');
-var app = express();
-var path = require('path');
+const express = require('express');
+const app = express();
+const path = require('path');
 
 // Viewed at http://localhost:8080
 app.get('/', function(req, res) {

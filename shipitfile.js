@@ -1,10 +1,13 @@
 module.exports = function (shipit) {
+  // Require shipit.
   require('shipit-deploy')(shipit);
 
-  var config = require('./config.json');
-  var pathStr = "PATH='$PATH:/usr/local/bin'";
-  var currentPath = config.deploy.path + "/current";
+  // Constants.
+  const config = require('./config.json');
+  const pathStr = "PATH='$PATH:/usr/local/bin'";
+  const currentPath = config.deploy.path + "/current";
 
+  // Configuration for deployment.
   shipit.initConfig({
     default: {
       workspace: 'tmp',
@@ -21,20 +24,20 @@ module.exports = function (shipit) {
     }
   });
 
-  // this task starts the server in a screen with a name set in the config
+  // This task starts the server in a screen with a name set in the config.
   shipit.blTask('restart_process', function () {
-    return shipit.remote(pathStr + " && sudo stop portfolio && sudo start portfolio");
+    return shipit.remote(pathStr + ' && sudo stop portfolio && sudo start portfolio');
   });
 
-  // this task copies the config.json from your local folder to the current folder
+  // This task copies the config.json from your local folder to the current folder.
   shipit.blTask('install_local_config', function () {
     return shipit.remoteCopy('config.json', currentPath);
   });
 
   shipit.on('deployed', function () {
-    // this series of tasks will result in a good deploy assuming everything is \working
+    // This series of tasks will result in a good deploy assuming everything is \working
     shipit.start('install_local_config', 'restart_process');
-    // if you're having problems with the deploy being successful, but not actually starting the server, try this:
-    //shipit.start('kill_screen', 'install', 'install_config', 'start_session');
+    // If you're having problems with the deploy being successful, but not actually starting the server, try this:
+    // shipit.start('kill_screen', 'install', 'install_config', 'start_session');
   });
 };
