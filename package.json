@@ -5,6 +5,8 @@
   "main": "index.html",
   "scripts": {
     "start": "nodemon server/index.js --exec babel-node",
+    "build-server": "babel -d ./build ./server -s",
+    "build": "npm run build-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
