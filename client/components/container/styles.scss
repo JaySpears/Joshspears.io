@@ -1,0 +1,15 @@
+// Import styling base.
+@import './../../assets/styles/styles.scss';
+
+body{
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  @include medium-down{
+    padding: 0px 15px;
+  };
+}

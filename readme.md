@@ -1,3 +1,3 @@
 ### joshspears.io
 
-Under construction :)
+This project is currently under construction.

@@ -6,3 +6,4 @@ npm-debug.log
 config.json
 tmp
 .sass-cache
+build/
