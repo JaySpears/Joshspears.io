@@ -33,7 +33,7 @@ if (isDeveloping) {
 app.use(bodyParser.json());
 
 // Allowing app to use static CSS and JavaScript files.
-app.use(express.static(__dirname, './build'));
+app.use(express.static(path.join(__dirname, './build')));
 
 // Exporting app to use in routes file.
 module.exports.app = app;
