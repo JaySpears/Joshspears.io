@@ -32,6 +32,9 @@ if (isDeveloping) {
 // To support JSON-encoded bodies.
 app.use(bodyParser.json());
 
+// Allowing app to use static CSS and JavaScript files.
+app.use(express.static(__dirname));
+
 // Exporting app to use in routes file.
 module.exports.app = app;
 
