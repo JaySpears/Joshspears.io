@@ -9,6 +9,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 const config = require('../webpack.config.js');
 const isDeveloping = !process.env.NODE_ENV;
 const port = isDeveloping ? 3000 : process.env.PORT;
+console.log(process.env.NODE_ENV, process.env.PORT);
 const app = express();
 
 // Run webpack middleware if in development mode.
