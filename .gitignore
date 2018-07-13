@@ -3,7 +3,7 @@ bower_components
 npm-debug.log
 .DS_Store
 .git
-config.json
+config/
 tmp
 .sass-cache
 build/

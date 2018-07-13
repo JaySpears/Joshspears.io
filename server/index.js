@@ -1,46 +1,36 @@
 // Dependencies.
-import express from 'express';
-import webpack from 'webpack';
-import bodyParser from 'body-parser';
-import webpackMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
-import path;
-
-// Constants.
-const config = require('../webpack.config.js');
-const isDeveloping = !process.env.NODE_ENV;
-const port = isDeveloping ? 3000 : process.env.PORT;
+const express = require('express');
+const path = require('path');
 const app = express();
+const emailController = require('./controllers/controller.email.js');
+const bodyParser = require('body-parser');
 
-// Run webpack middleware if in development mode.
-if (isDeveloping) {
-  const compiler = webpack(config);
-  const middleware = webpackMiddleware(compiler, {
-    publicPath: config.output.publicPath,
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false
-    }
-  });
-  app.use(middleware);
-  app.use(webpackHotMiddleware(compiler));
-}
+// Allowing app to use static CSS and JavaScript files.
+app.use(express.static(__dirname + '/../client'));
 
 // To support JSON-encoded bodies.
 app.use(bodyParser.json());
 
-// Allowing app to use static CSS and JavaScript files.
-app.use(express.static(path.join(__dirname, './build')));
+// Root route.
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve('index.html'));
+});
 
-// Exporting app to use in routes file.
-module.exports.app = app;
+// Email route.
+app.post('/email', (req, res) => {
+  console.log(req);
+  emailController.send(req.body).then(() => {
+    res.status(200).send({
+      status: 'success'
+    });
+  }).catch(() => {
+    res.status(403).send({
+      status: 'failure'
+    });
+  });
+});
 
-// Require routes.
-require('./routes/index');
-
-// Run express server.
-app.listen(port);
+// Listen to port 5000
+app.listen(3000, () => {
+  console.log('Application listening on localhost:3000');
+});

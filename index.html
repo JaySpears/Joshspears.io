@@ -2,14 +2,62 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Joshspears.io</title>
+    <title>Josh Spears Portfolio</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
     <!-- Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/styles/styles.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
   </head>
   <body>
-    <!-- Attach application via ID attribute. -->
-    <div id="application"></div>
-    <!-- Bundled webpack file. -->
-    <script src="/bundle.js"></script>
+    <div class="hero">
+      <div class="overlay">
+        <h1><span class="initial-one">J</span><span class="first">osh</span><span class="initial-two">S</span><span class="last">pears</span></h1>
+        <h2>Architecting the web one piece of code at a time.</h2>
+        <p class="arrow"><i class="fa fa-angle-double-down fa-2x"></i></p>
+      </div>
+    </div>
+    <div class="block about">
+      <h2>About Myself</h2>
+      <p>I’m currently a devoted engineer with a heavy affection for JavaScript development. My skill set has been obtained from over 5 years of technical experience. Love a good challenge when it comes to problem solving anything software related. Remaining curious and focused in languages, frameworks, and technologies are important to me. Development is more than a job to me. It’s a <b>passion</b>.</p>
+    </div>
+    <div class="work">
+      <h2>Explore My Work</h2>
+      <ul>
+        <li><a href="https://github.com/JaySpears" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/joshua-spears-81bb20a7/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+        <li><a href="https://stackoverflow.com/users/5190086/josh?tab=profile" target="_blank"><i class="fa fa-stack-overflow fa-2x"></i></a></li>
+        <li><a href="/assets/docs/resume.pdf" target="_blank"><i class="fa fa-file fa-2x"></i></a></li>
+      </ul>
+    </div>
+    <div class="contact">
+      <h2>Let's Build Something Togethor</h2>
+      <form name="contact">
+        <div>
+          <input type="text" placeholder="What's your name?" name="name">
+          <p class="error">You forgot your name!</p>
+        </div>
+        <div>
+          <input type="text" placeholder="What's your email?" name="email">
+          <p class="error">You forgot your email!</p>
+          <p class="error">Sorry, thats an invalid email address.</p>
+        </div>
+        <div>
+          <textarea name="information" placeholder="What's on your mind?" rows="8" cols="80"></textarea>
+          <p class="error">Aren't you going to say something?</p>
+        </div>
+        <div>
+          <button type="submit" name="button">Send Email</button>
+        </div>
+      </form>
+    </div>
+    <!-- Scripts -->
+    <script src="/assets/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="/assets/bower_components/jquery-ui/jquery-ui.min.js" charset="utf-8"></script>
+    <script src="/assets/scripts/scripts.min.js" charset="utf-8"></script>
   </body>
 </html>

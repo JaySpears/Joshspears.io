@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'NeutraTextBold';
+    src: url("../fonts/NeutraTextBold.otf") format("opentype");
+}
+.hero {
+  height: 100vh;
+  background-image: url('../images/background.png');
+  background-size: cover;
+  position: relative;
+  animation-delay: 2s;
+  animation: fadeIn 1.2s;
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background:linear-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0)) ;
+  }
+  h1{
+    text-align: center;
+    margin-top: 0px;
+    top: calc(50% - 100px);
+    position: relative;
+    font-family: NeutraTextBold;
+    color: white;
+    font-size: 60px;
+    .first,
+    .last {
+      opacity: 0;
+      display: inline-block;
+      height: 45px;
+      animation: fadeOut 1.5s;
+    }
+    &:before {
+      content: '';
+      height: 2px;
+      background-color: #fff;
+      width: 80px;
+      display: table;
+      position: absolute;
+      left: 0;
+      right: 8px;
+      margin: 53px auto 0 auto;
+      animation: fadeInSlow 3.5s;
+    }
+    &:after {
+      content: '';
+      height: 2px;
+      background-color: #fff;
+      width: 75px;
+      display: table;
+      position: absolute;
+      left: 0;
+      right: 5px;
+      margin: -7px auto 0 auto;
+      transform-origin: right;
+      transform: rotate(90deg);
+      animation: fadeInSlow 3.5s;
+    }
+    .initial-one {
+      position: relative;
+      right: -120px;
+      animation: slideRightOne 2.7s;
+    }
+    .initial-two {
+      position: relative;
+      right: -20px;
+      animation: slideRightTwo 2.7s;
+    }
+    .first {
+      margin-right: 10px;
+    }
+  }
+  h2 {
+    font-size: 28px;
+    text-align: center;
+    color: white;
+    top: calc(50% - 100px);
+    position: relative;
+    font-family: Raleway;
+    font-weight: 300;
+    margin-top: 15px;
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      font-size: 23px;
+      line-height: 27px;
+    }
+  }
+  .arrow {
+    text-align: center;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    animation: upAndDown 1.5s infinite;
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+      animation: none;
+      bottom: 20px;
+    }
+    i {
+      font-size: 65px;
+      color: white;
+      cursor: pointer;
+      @media screen and (min-width: 320px) and (max-width: 767px) {
+        font-size: 50px;
+      }
+    }
+  }
+}
+
+@keyframes upAndDown {
+  0%{
+    bottom: 40px;
+  }
+  50%{
+    bottom: 60px;
+  }
+  100%{
+    bottom: 40px;
+  }
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSlow {
+  0%{
+    opacity: 0;
+  }
+  90%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0%{
+    opacity: 1;
+  }
+  90%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes slideRightOne {
+  0%{
+    right: 0;
+  }
+  90%{
+    right: 0;
+  }
+  100%{
+    right: -120;
+  }
+}
+
+@keyframes slideRightTwo {
+  0%{
+    right: 0;
+  }
+  90%{
+    right: 0;
+  }
+  100%{
+    right: -20;
+  }
+}
