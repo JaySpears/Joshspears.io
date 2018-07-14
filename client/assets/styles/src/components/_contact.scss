@@ -4,7 +4,6 @@
   padding-bottom: 70px;
   @media screen and (min-width: 320px) and (max-width: 767px) {
     padding-top: 10px;
-    padding-bottom: 30px;
   }
   h2 {
     color: black;
@@ -66,7 +65,7 @@
           float: none;
         }
       }
-      &:last-child {
+      &.submit-wrapper {
         text-align: center;
         button {
           background-color: maroon;
@@ -83,6 +82,46 @@
             background-color: black;
           }
         }
+      }
+    }
+    .ajax-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      display: none;
+      .wrapper {
+        width: 60px;
+        padding: 8px 0;
+        border-radius: 3px;
+        background-color: rgba(228,228,228,.5);
+        margin: 0 auto;
+        float: none;
+        top: calc(50% - 34px);
+        position: relative;
+        box-shadow: 0px 0px 13px 0px #ada9a9;
+        @media screen and (min-width: 320px) and (max-width: 767px) {
+          top: calc(50% - 7px);
+        }
+        svg {
+          height: 40px;
+          width: 40px;
+        }
+      }
+    }
+    .response {
+      p {
+        display: none;
+        color: black;
+        font-family: raleway;
+        text-align: center;
+        margin: 15px 0px;
+        line-height: 20px;
+        position: absolute;
+        left: 0;
+        right: 0;
       }
     }
     .error {

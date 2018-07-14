@@ -32,5 +32,5 @@ app.post('/email', (req, res) => {
 
 // Listen to port 5000.
 app.listen(5000, () => {
-  console.log('Application listening on localhost:3000');
+  console.log('Application listening on port -> 5000');
 });

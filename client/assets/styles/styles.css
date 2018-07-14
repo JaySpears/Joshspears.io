@@ -323,8 +323,7 @@ table {
   padding-bottom: 70px; }
   @media screen and (min-width: 320px) and (max-width: 767px) {
     .contact {
-      padding-top: 10px;
-      padding-bottom: 30px; } }
+      padding-top: 10px; } }
   .contact h2 {
     color: black;
     font-family: Raleway;
@@ -379,9 +378,9 @@ table {
         .contact form div:nth-child(2) {
           width: 100%;
           float: none; } }
-    .contact form div:last-child {
+    .contact form div.submit-wrapper {
       text-align: center; }
-      .contact form div:last-child button {
+      .contact form div.submit-wrapper button {
         background-color: maroon;
         border-radius: 0px;
         color: white;
@@ -393,8 +392,43 @@ table {
         cursor: pointer;
         -webkit-transition: all 0.5s;
         transition: all 0.5s; }
-        .contact form div:last-child button:hover {
+        .contact form div.submit-wrapper button:hover {
           background-color: black; }
+    .contact form .ajax-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      display: none; }
+      .contact form .ajax-overlay .wrapper {
+        width: 60px;
+        padding: 8px 0;
+        border-radius: 3px;
+        background-color: rgba(228, 228, 228, 0.5);
+        margin: 0 auto;
+        float: none;
+        top: calc(50% - 34px);
+        position: relative;
+        -webkit-box-shadow: 0px 0px 13px 0px #ada9a9;
+        box-shadow: 0px 0px 13px 0px #ada9a9; }
+        @media screen and (min-width: 320px) and (max-width: 767px) {
+          .contact form .ajax-overlay .wrapper {
+            top: calc(50% - 7px); } }
+        .contact form .ajax-overlay .wrapper svg {
+          height: 40px;
+          width: 40px; }
+    .contact form .response p {
+      display: none;
+      color: black;
+      font-family: raleway;
+      text-align: center;
+      margin: 15px 0px;
+      line-height: 20px;
+      position: absolute;
+      left: 0;
+      right: 0; }
     .contact form .error {
       position: absolute;
       color: red;

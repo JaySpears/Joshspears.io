@@ -17,8 +17,10 @@ module.exports = {
       let mailOptions = {
         from: data.email,
         to: config.email.to,
-        subject: 'joshspears.io, email from: ' + data.name,
-        html: data.information
+        subject: 'Email from joshspears.io!',
+        html: 'Users email: ' + data.email + '<br>' +
+              'Users name: ' + data.name + '<br>' +
+              data.information
       };
       transport.sendMail(mailOptions).then(function(info){
         resolve();

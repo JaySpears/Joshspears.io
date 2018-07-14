@@ -34,6 +34,7 @@
 
       // Form didn't have any errors.
       if (valid) {
+        $('.ajax-overlay').show();
         $.ajax({
           type: 'POST',
           url: '/email',
@@ -45,10 +46,18 @@
             information: $('textarea[name="information"]').val()
           }),
           success: function(data){
-            console.log('email sent');
+            $('.success').show();
+            $('.ajax-overlay').hide();
+            setTimeout(function () {
+              $('.success').hide();
+            }, 4000);
           },
           error: function(){
-            console.log('email failed');
+            $('.failure').show();
+            $('.ajax-overlay').hide();
+            setTimeout(function () {
+              $('.failure').hide();
+            }, 4000);
           }
         });
       }
