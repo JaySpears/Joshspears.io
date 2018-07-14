@@ -31,7 +31,7 @@ module.exports = function (shipit) {
 
   // This task copies the config.json from your local folder to the current folder.
   shipit.blTask('install_local_config', function () {
-    return shipit.remoteCopy('config.json', currentPath);
+    return shipit.remoteCopy('./config/config.json', currentPath);
   });
 
   shipit.on('deployed', function () {
