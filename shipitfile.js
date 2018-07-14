@@ -3,9 +3,9 @@ module.exports = function (shipit) {
   require('shipit-deploy')(shipit);
 
   // Constants.
-  const config = require('./config.json');
+  const config = require('./config/config.json');
   const pathStr = "PATH='$PATH:/usr/local/bin'";
-  const currentPath = config.deploy.path + "/current";
+  const currentPath = config.deploy.path + "/current/config/";
 
   // Configuration for deployment.
   shipit.initConfig({
